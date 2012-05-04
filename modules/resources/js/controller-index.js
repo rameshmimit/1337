@@ -1,25 +1,15 @@
-define(
-    'controller-index',
-    
-    [
-        'module-foo',
-        'module-bar'
-    ],
+(function(global, doc){
 
-    function(foo, bar){
-    
-        var self = {};
+    console.log('page controller loaded!', global, doc);
 
-        function __new__(){
-            self.run = run;
+    // index controller
+    define(
+        ['domReady!', 'jquery', 'use!modernizr'],
+        function(domReady, $, mod){
+            console.log('page controller ready!', domReady, $(), mod);
+
+            $('body').append('index controller is ready!');
         }
+    );
 
-        function run(){
-            console.log('run');
-            console.log(foo.foo(), bar.bar());
-        }
-
-        __new__();
-        return self;
-    }
-);
+}(this, this.document));

@@ -1,9 +1,10 @@
 (function(undefined){
     define(
-        ['modernizr'],
+        ['order!libs/modernizr/modernizr-2.5.3.min'],
 
         function(modernizr){
-        
+            console.log('features loaded!', modernizr);
+
             var self = {};
 
             // cache results here
@@ -13,6 +14,10 @@
             var _history;
 
             function __new__(){
+                self.cssTransforms3d = cssTransforms3d;
+                self.cssTransforms = cssTransforms;
+                self.cssTransitions = cssTransitions;
+                self.history = history;
             }
 
             // tests add more
