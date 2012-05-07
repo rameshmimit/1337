@@ -1,9 +1,8 @@
 (function(undefined){
     define(
-        ['order!libs/modernizr/modernizr-2.5.3.min'],
-
-        function(modernizr){
-            console.log('features loaded!', modernizr);
+        ['use!modernizr'],
+        function(_modernizr){
+            console.log('features loaded!', 'local version of modernizr =',_modernizr);
 
             var self = {};
 
@@ -23,27 +22,27 @@
             // tests add more
             function cssTransforms3d(){
                 if(_cssTransforms3d === undefined)
-                    _cssTransforms3d = modernizr.csstransforms3d;
-                else
-                    return _cssTransforms3d;
+                    _cssTransforms3d = _modernizr.csstransforms3d;
+                
+                return _cssTransforms3d;
             }
             function cssTransforms(){
                 if(_cssTransforms === undefined)
-                    _cssTransforms = modernizr.csstransforms;
-                else
-                    return _cssTransforms;
+                    _cssTransforms = _modernizr.csstransforms;
+                
+                return _cssTransforms;
             }
             function cssTransitions(){
                 if(_cssTransitions === undefined)
-                    _cssTransitions = modernizr.csstransforms;
-                else
-                    return _cssTransitions;
+                    _cssTransitions = _modernizr.csstransforms;
+                
+                return _cssTransitions;
             }
             function history(){
                 if(_history === undefined)
-                    _history = modernizr.csstransforms;
-                else
-                    return _history;
+                    _history = _modernizr.csstransforms;
+                
+                return _history;
             }
 
             __new__();

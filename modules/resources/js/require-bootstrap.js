@@ -2,25 +2,30 @@
     if(require !== undefined){
         require.config({
             'baseUrl': '/resources/js/',
-            
-            // incompatible scripts to be loaded as modules
-            'use': {
-                'modernizr': {
-                    'attach': 'modernizr'
-                }
-            }, 
 
             // amd modules
             'paths': {
-                'modernizr': 'libs/modernizr/modernizr-2.5.3.min',
-                'jquery': 'libs/jquery/jquery-1.7.2.min',
-                'foo': 'module-foo',
-                'features': 'mediator-features-modernizr',
-                
                 // require plugins
                 'domReady': 'libs/require/domReady',
                 'order': 'libs/require/order',
-                'use': 'libs/require/use'
+                'use': 'libs/require/use',
+
+                // modules
+                'jquery': 'libs/jquery/jquery-1.7.2.min',
+                'foo': 'module-foo',
+                'features': 'mediator-features-modernizr',
+
+                // non-amd code to be ported in with use
+                'modernizr': 'libs/modernizr/modernizr-2.5.3.min'
+            },
+
+            // non amd compatible js imported via use
+            'use': {
+                'modernizr':{
+                    'attach': function(){
+                        return Modernizr;
+                    }
+                }
             },
 
             // additional configuration
