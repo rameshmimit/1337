@@ -14,9 +14,9 @@
 
             function __new__(){
                 self.cssTransforms3d = cssTransforms3d;
-                self.cssTransforms = cssTransforms;
-                self.cssTransitions = cssTransitions;
-                self.history = history;
+                self.cssTransforms   = cssTransforms;
+                self.cssTransitions  = cssTransitions;
+                self.history         = history;
             }
 
             // tests add more

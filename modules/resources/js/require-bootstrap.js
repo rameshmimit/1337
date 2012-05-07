@@ -11,8 +11,9 @@
                 'use': 'libs/require/use',
 
                 // modules
-                'jquery': 'libs/jquery/jquery-1.7.2.min',
+                'jquery': 'libs/jquery/jquery-1.7.2.min', // jq is amd compatible as of 1.7
                 'foo': 'module-foo',
+                'bar': 'module-bar',
                 'features': 'mediator-features-modernizr',
 
                 // non-amd code to be ported in with use
