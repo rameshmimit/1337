@@ -16,15 +16,18 @@
                 // require plugins
                 'domReady': 'libs/require/domReady', // will belay the module until the dom has loaded
                 'use': 'libs/require/use', // loads non-amd compatible code
+                'text': 'libs/require/text', // loads a text file in as a resource
 
                 // modules
                 'jquery': 'libs/jquery/jquery-1.7.2.min', // jq is amd compatible as of 1.7
                 'foo': 'module-foo',
                 'bar': 'module-bar',
                 'features': 'mediator-features-modernizr',
+                'templating': 'mediator-templating-mustache',
 
                 // non-amd code to be ported in with use
-                'modernizr': 'libs/modernizr/modernizr-2.5.3.min'
+                'modernizr': 'libs/modernizr/modernizr-2.5.3.min',
+                'mustache': 'libs/mustache/mustache'
             },
 
             // non amd compatible js imported via use
@@ -32,6 +35,11 @@
                 'modernizr':{
                     'attach': function(){
                         return Modernizr;
+                    }
+                },
+                'mustache':{
+                    'attach':function(){
+                        return Mustache;
                     }
                 }
             },

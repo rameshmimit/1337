@@ -12,15 +12,26 @@
             'features',
             'foo',
             'bar',
-            'module-baz'
+            'module-baz',
+            'templating',
+            'text!templates/list.html'
         ],
 
         // this function doesn't return anything but will manage the page interactions
         // dependencies are passed to the callback in the order they were added above
-        function(domReady, $, features, foo, bar, baz){
+        function(
+            domReady,
+            $,
+            features,
+            foo,
+            bar,
+            baz,
+            templating,
+            listTemplate
+        ){
 
             // testing stuff
-            console.log('page controller ready!', domReady, $(), features, foo, bar);
+            console.log('page controller ready!', domReady, $(), features, foo, bar, templating, listTemplate);
             console.log('foo.foo', foo.foo());
             console.log('bar.bar', bar.bar());
             console.log('baz.baz', baz.baz());
@@ -30,6 +41,17 @@
             $('body').append('<p>cssTransforms supported? ' +  features.cssTransforms() + '</p>');
             $('body').append('<p>cssTransitions supported? ' +  features.cssTransitions() + '</p>');
             $('body').append('<p>history supported? ' +  features.history() + '</p>');
+
+            var listModel = {
+                'items': [
+                    {'item': 'foo'},
+                    {'item': 'bar'},
+                    {'item': 'baz'}
+                ]
+            };
+
+            var listRendered = templating.render(listTemplate, listModel);
+            $('body').append(listRendered);
         }
     );
 
