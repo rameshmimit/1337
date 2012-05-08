@@ -37,10 +37,10 @@
             console.log('baz.baz', baz.baz());
 
             $('body').append('<p>index controller is ready!</p>');
-            $('body').append('<p>cssTransforms3d supported? ' +  features.cssTransforms3d() + '</p>');
-            $('body').append('<p>cssTransforms supported? ' +  features.cssTransforms() + '</p>');
-            $('body').append('<p>cssTransitions supported? ' +  features.cssTransitions() + '</p>');
-            $('body').append('<p>history supported? ' +  features.history() + '</p>');
+            $('body').append('<p>cssTransforms3d supported? ' +  features.cssTransforms3d + '</p>');
+            $('body').append('<p>cssTransforms supported? ' +  features.cssTransforms + '</p>');
+            $('body').append('<p>cssTransitions supported? ' +  features.cssTransitions + '</p>');
+            $('body').append('<p>history supported? ' +  features.history + '</p>');
 
             var listModel = {
                 'items': [
