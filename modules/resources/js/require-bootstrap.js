@@ -1,14 +1,21 @@
+// bootstrap must be loaded in after require.js has loaded
+// rolling into an anonymous function to encapsulate undefined
 (function(undefined){
+    
+    // test to see if required had abeen loaded
     if(require !== undefined){
+
+        // bootstrap object
+        // 'aliases' to scripts can be added in 'paths'
+        // 'use' is a plugin that executes non-amd code but allows a reference to be passed in to the dependancies argument
         require.config({
             'baseUrl': '/resources/js/',
 
             // amd modules
             'paths': {
                 // require plugins
-                'domReady': 'libs/require/domReady',
-                'order': 'libs/require/order',
-                'use': 'libs/require/use',
+                'domReady': 'libs/require/domReady', // will belay the module until the dom has loaded
+                'use': 'libs/require/use', // loads non-amd compatible code
 
                 // modules
                 'jquery': 'libs/jquery/jquery-1.7.2.min', // jq is amd compatible as of 1.7
@@ -36,4 +43,5 @@
     }else{
         throw 'Require has not been loaded!';
     }
+
 }());

@@ -1,3 +1,4 @@
+// defines a simple module with no dependencies
 define(
     function(){
         

@@ -1,3 +1,4 @@
+// defines a simple module with two dependencies
 define(
     ['foo', 'bar'],
     function(foo, bar){
