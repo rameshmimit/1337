@@ -10,7 +10,7 @@ define(
         }
 
         function baz(){
-            return foo.foo() + bar.bar();
+            return 'you called baz.baz() ' + foo.foo() + bar.bar();
         }
 
         __new__();
