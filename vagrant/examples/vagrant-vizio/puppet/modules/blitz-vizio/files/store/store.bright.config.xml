@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>    
+    <modules>
+        <Vizio_Bright>
+            <version>0.1.0</version>
+        </Vizio_Bright>
+    </modules>
+    <frontend>
+        <routers>
+            <bright>
+                <use>standard</use>
+                <args>
+                    <module>Vizio_Bright</module>
+                    <frontName>bright</frontName>
+                </args>
+            </bright>
+        </routers>
+        <layout>
+            <updates>
+                <bright>
+                    <file>bright.xml</file>
+                </bright>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <events>
+            <!-- <controller_action_predispatch>
+                <observers>
+                    <Vizio_Bright_Events_Observer>
+                        <type>singleton</type>                          
+                        <class>Vizio_Bright_Events_Observer</class>
+                        <method>preDispatch</method>
+                    </Vizio_Bright_Events_Observer>
+                </observers>
+            </controller_action_predispatch> -->
+            <!-- <controller_front_init_routers>
+                <observers>
+                    <Vizio_Bright_Events_Observer>
+                        <type>singleton</type>                          
+                        <class>Vizio_Bright_Events_Observer</class>
+                        <method>addBrightRouter</method>
+                    </Vizio_Bright_Events_Observer>
+                </observers>
+            </controller_front_init_routers> -->
+        </events>
+        <rewrite>
+            <vizio_bright_home_index>
+                <from><![CDATA[#^/?$#]]></from>
+                <to>/bright/home/index</to>
+            </vizio_bright_home_index>
+        </rewrite>
+        <blocks>
+            <bright>
+                <class>Vizio_Bright_Block</class>
+            </bright>
+        </blocks>
+        <helpers>
+            <bright>
+                <class>Vizio_Bright_Helper</class>
+            </bright>                
+        </helpers>
+        <!--
+        <models>
+            <tvpy2011>
+                <class>TVP_Y2011_Model</class>
+            </tvpy2011>   
+        </models>
+        <blocks>
+            <tvpy2011>
+                <class>TVP_Y2011_Block</class>
+            </tvpy2011>
+        </blocks>
+        -->
+    </global>
+    <default>
+        <design>
+            <bright>
+                <resourcePrefixSecure></resourcePrefixSecure>
+                <resourcePrefix></resourcePrefix>
+            </bright>
+        </design>
+    </default>
+</config>
