@@ -1,0 +1,1 @@
+define(["require","jquery","./lib","./controller/c1","./model/m1"],function(require){var $=require("jquery"),lib=require("./lib"),controller=require("./controller/c1"),model=require("./model/m1");controller.setModel(model),$(function(){controller.render(lib.getBody())})})
