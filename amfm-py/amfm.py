@@ -2,7 +2,7 @@ import urllib
 import json
 import argparse
 
-parser = argparse.ArgumentParser(description='DnD Die Roller')
+# parser = argparse.ArgumentParser(description='DnD Die Roller')
 
 # parser.add_argument('-r')
 
@@ -88,7 +88,7 @@ def roll_d3(modifier=0):
 	result = rand_int(3)
 	print result
 
-# roll_d20()
+roll_d20()
 # roll_d10()
 # roll_d8()
 # roll_d6()
