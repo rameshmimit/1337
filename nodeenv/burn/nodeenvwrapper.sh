@@ -2,7 +2,8 @@
 export NODEENV_HOME=/home/vagrant/.nodeenv/
 
 # make nodeenv
-# only supports basic optionless call to nodeenv for the moment, my shell scripting is only so-so.
+# takes param $node_env, e.g. 'mknodeenv my_env'
+# only supports basic optionless call to nodeenv for the moment
 mknodeenv(){
 	node_env=$1
 	
@@ -16,9 +17,7 @@ mknodeenv(){
 }
 
 # activate nodeenv
-# takes param $env_name
-# activate=$NDOEENV_HOME/$env_name/bin/activate
-# will need to deactivate any current env?
+# takes param $env_name, e.g. 'workon_nodeenv my_env'
 workon_nodeenv(){
 	node_env=$1
 	
@@ -32,19 +31,21 @@ workon_nodeenv(){
 }
 
 # remove nodeenv
+# takes param $env_name, e.g. 'rmnodeenv my_env'
 rmnodeenv(){
 	node_env=$1
 	rm -r "$NODEENV_HOME$node_env"
 }
 
 # change dir to node environment root
+# takes param $env_name, e.g. 'cdnodeenv my_env'
 cdnodeenv(){
 	node_env=$1
 	cd "$NODEENV_HOME$node_env"
 }
 
 # list node envs
+# lists home dir contents, probably not the best ever but works
 lsnodeenv(){
-	node_env=$1
-	ls "$NODEENV_HOME$node_env"
+	ls "$NODEENV_HOME"
 }
