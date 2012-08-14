@@ -1,0 +1,19 @@
+{% import 'partials/header.html' as header -%}
+{% import 'partials/footer.html' as footer -%}
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Burn | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <!--<script src="/resources/src/js/lib/require/require.js" data-main="resources/src/js/controller-index.js"></script>
+    <script src="/resources/src/js/require-bootstrap.js"></script>-->
+</head>
+<body>
+    {{ header.view(model) }}
+    <div class="body">
+        {% block content %}{% endblock %}
+    </div>
+    {{ footer.view() }}
+</body>
+</html>
