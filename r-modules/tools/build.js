@@ -82,34 +82,25 @@ resources/
 
 {
 	'appDir' : '../www',
-	'baseUrl': 'src/js'
-	'dir'    : '../www/js',
+	'baseUrl': '/resources/src/js'
+	'dir'    : '../www/resources/js',
 
 	'paths': {
-		'jquery'    : 'lib/jquery',
-		'modernizr' : 'lib/modernizr',
-		'require'   : '/lib/require',
-		'twitter-bs': '/lib/twitter-bs'
+		'jquery': 'lib/jquery/',
+		'modernizr': 'lib/modernizr',
+		'mustache': '/lib/mustache'
+		'require': 'lib/require'
 	},
 
 	'modules': [
 		{
-			'name': 'blanket'
+			'name': 'bootstrap'
 			'include': [
 				'jquery/jquery-1.7.2.min',
 				'modernizr/modernizr-2.5.3.min',
+				'mustache/mustache',
 				'require/domReady',
-				'require/use',
-				'require/text'
-			]
-		},
-		{
-			'name': 'view-index',
-			'include': [
-				'view-index'
-			]
-			'exclude': [
-				'blanket'
+				'require/use'
 			]
 		}
 	]
