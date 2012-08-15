@@ -1,15 +1,15 @@
 {
-    appDir: '../www_test/resources/src/js/app/',
+    appDir: '../www_test/resources/src/js/',
     baseUrl: './',
     dir: '../www_test/resources/js',
 
     'paths': {
-        'jquery'  : '../lib/jquery/jquery-1.7.2.min',
-        'domReady': '../lib/require/domReady',
-        'use'     : '../lib/require/use',
-        'foo'     : 'module-foo',
-        'bar'     : 'module-bar',
-        'baz'     : 'module-baz'
+        'jquery'  : 'lib/jquery/jquery-1.7.2.min',
+        'domReady': 'lib/require/domReady',
+        'use'     : 'lib/require/use',
+        'foo'     : 'app/module-foo',
+        'bar'     : 'app/module-bar',
+        'baz'     : 'app/module-baz'
     },
     
     // maybe this isn't what we want, sub-layer dependencies
@@ -23,7 +23,7 @@
 
     modules: [
         {
-            name: '../shared',
+            name: 'shared',
             include: [
             	'jquery',
             	'domReady',
@@ -31,13 +31,24 @@
             ]
         },
         {
-        	name: '../home.html',
+        	name: 'home.html',
         	include: [
         		
         	],
         	exclude: [
-        		'view-bootstrap'
+        		'shared'
         	]
-        }
+        },
+        // {
+        // 	name: 'module-foo-bar-baz',
+        // 	include: [
+        // 		'foo',
+        // 		'bar',
+        // 		'baz'
+        // 	],
+        // 	exclude: [
+        // 		'view-bootstrap'
+        // 	]
+        // }
     ]
 }
