@@ -1,1 +1,0 @@
-define(["foo","bar"],function(e,t){function r(){n.baz=i}function i(){return"you called baz.baz() "+e.foo()+t.bar()}var n={};return r(),n})

@@ -1,12 +1,12 @@
 {
-    appDir: '../www_test/resources/src/js/',
+    appDir: '../www_test/resources/src/js/app/',
     baseUrl: './',
     dir: '../www_test/resources/js',
 
     'paths': {
-        'jquery'  : 'lib/jquery/jquery-1.7.2.min',
-        'domReady': 'lib/require/domReady',
-        'use'     : 'lib/require/use',
+        'jquery'  : '../lib/jquery/jquery-1.7.2.min',
+        'domReady': '../lib/require/domReady',
+        'use'     : '../lib/require/use',
         'foo'     : 'module-foo',
         'bar'     : 'module-bar',
         'baz'     : 'module-baz'
@@ -15,12 +15,15 @@
     // maybe this isn't what we want, sub-layer dependencies
     // might be better off minified into their own modules
     // findNestedDependencies: true,
+    
+    // we don't want to deploy src files
     removeCombined: true,
+    
     // skipModuleInsertion: true, // may need this if using non AMD code
 
     modules: [
         {
-            name: 'view-bootstrap',
+            name: '../shared',
             include: [
             	'jquery',
             	'domReady',
@@ -28,24 +31,13 @@
             ]
         },
         {
-        	name: 'view-home',
+        	name: '../home.html',
         	include: [
         		
         	],
         	exclude: [
         		'view-bootstrap'
         	]
-        },
-        // {
-        // 	name: 'module-foo-bar-baz',
-        // 	include: [
-        // 		'foo',
-        // 		'bar',
-        // 		'baz'
-        // 	],
-        // 	exclude: [
-        // 		'view-bootstrap'
-        // 	]
-        // }
+        }
     ]
 }
