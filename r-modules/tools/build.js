@@ -19,9 +19,18 @@
     // findNestedDependencies: true,
     
     // we don't want to deploy src files
-    removeCombined: true,
+    // debug maybe put this to false for uncombined modules during testing
+    // call to r.js will take this in a cli arg as well
+    // build call can have debug flag that will set appropriate options in fab file
+    removeCombined: false,
     
     // skipModuleInsertion: true, // may need this if using non AMD code
+
+    // many other options, github.com/mishoo/Uglify.js
+    uglify: {
+        // debugging, will output non-minified / indented code
+        // 'beautify': true
+    },
 
     modules: [
         {
@@ -33,6 +42,17 @@
             ]
         },
         {
+            name: 'foo-bar-baz',
+            include: [
+                'foo',
+                'bar',
+                'baz'
+            ],
+            exclude: [
+                'shared'
+            ]
+        },
+        {
         	name: 'home.html',
         	include: [
         		
@@ -40,17 +60,6 @@
         	exclude: [
         		'shared'
         	]
-        },
-        // {
-        // 	name: 'module-foo-bar-baz',
-        // 	include: [
-        // 		'foo',
-        // 		'bar',
-        // 		'baz'
-        // 	],
-        // 	exclude: [
-        // 		'view-bootstrap'
-        // 	]
-        // }
+        }
     ]
 }
