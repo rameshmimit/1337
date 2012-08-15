@@ -9,7 +9,9 @@
         'use'     : 'lib/require/use',
         'foo'     : 'app/module-foo',
         'bar'     : 'app/module-bar',
-        'baz'     : 'app/module-baz'
+        'baz'     : 'app/module-baz',
+        'view-bootstrap': 'app/view-bootstrap',
+        'view-home': 'app/view-home'
     },
     
     // maybe this isn't what we want, sub-layer dependencies

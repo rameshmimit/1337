@@ -3,3 +3,4 @@
 *.sublime-workspace
 *.swo
 *.swp
+r-modules/www_test/resources/js/*
