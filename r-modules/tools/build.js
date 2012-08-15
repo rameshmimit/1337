@@ -22,7 +22,7 @@
     // debug maybe put this to false for uncombined modules during testing
     // call to r.js will take this in a cli arg as well
     // build call can have debug flag that will set appropriate options in fab file
-    removeCombined: false,
+    removeCombined: true,
     
     // skipModuleInsertion: true, // may need this if using non AMD code
 
@@ -36,6 +36,7 @@
         {
             name: 'shared',
             include: [
+                'view-bootstrap',
             	'jquery',
             	'domReady',
             	'use'
