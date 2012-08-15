@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <title>Burn | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/resources/css/styles.css">
-    <!--<script src="/resources/src/js/lib/require/require.js" data-main="resources/src/js/controller-index.js"></script>
-    <script src="/resources/src/js/require-bootstrap.js"></script>-->
+    {% block scripts %}{% endblock %}
 </head>
 <body>
     {{ header.view(model) }}

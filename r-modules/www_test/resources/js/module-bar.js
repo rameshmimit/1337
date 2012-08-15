@@ -1,0 +1,1 @@
+define([],function(){function t(){e.bar=n}function n(){return"you called bar.bar()"}var e={};return t(),e})

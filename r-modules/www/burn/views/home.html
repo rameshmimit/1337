@@ -1,7 +1,12 @@
 {% extends "master.html" %}
-{% block title %}Welcome{% endblock %}
-{% block content %}
+
+{% block title %}Home Page | Welcome{% endblock %}
+
+{% block scripts %}
 <script src="/resources/src/js/lib/require/require.js" data-main="/resources/src/js/view-home.js"></script>
+{% endblock %}
+
+{% block content %}
 <div>
     This is the Home Page
 </div>

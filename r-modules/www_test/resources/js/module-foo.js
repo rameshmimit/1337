@@ -1,0 +1,1 @@
+define([],function(){function t(){e.foo=n}function n(){return"you called foo.foo()"}var e={};return t(),e})
