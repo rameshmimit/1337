@@ -12,6 +12,7 @@
     // think of this as our bin
     dir: '../www/resources/js/',
 
+    // paths let me alias more annoying folder structure
     'paths': {
         'jquery'    : 'lib/jquery/jquery-1.7.2.min',
         'domReady'  : 'lib/require/domReady',
@@ -19,12 +20,13 @@
         'modernizr' : 'lib/modernizr/modernizr-2.5.3.min'
     },
     
+    // will prevent combined src files from copying over
     // we don't want to deploy src files
     removeCombined: true,
 
     // many other options, github.com/mishoo/Uglify.js
     uglify: {
-        // debugging, will output non-minified / indented code
+        // debugging, will output non-minified / indented code if true
         'beautify': false
     },
 
