@@ -5,16 +5,16 @@
 
     // base url is relative to appDir
     // base url sets context for all require / define / module names
-    baseUrl: './app',
+    baseUrl: './',
 
     // dir is our output dir when not concatinating into one glob.js
-    dir: '../www/resources/js',
+    dir: '../www/resources/js/',
 
     'paths': {
-        'jquery'    : '../lib/jquery/jquery-1.7.2.min',
-        'domReady'  : '../lib/require/domReady',
-        'use'       : '../lib/require/use',
-        'modernizr' : '../lib/modernizr/modernizr-2.5.3.min.js'
+        // 'jquery'    : '../lib/jquery/jquery-1.7.2.min',
+        // 'domReady'  : '../lib/require/domReady',
+        // 'use'       : '../lib/require/use',
+        // 'modernizr' : '../lib/modernizr/modernizr-2.5.3.min'
     },
     
     // maybe this isn't what we want, sub-layer dependencies
@@ -37,30 +37,30 @@
 
     // modules define our final output
     modules: [
-        {
-            // shared is a common layer of code
-            name: '../shared',
-            include: [
-                'view-bootstrap',
-                'jquery',
-                'domReady',
-                'use',
-                'modernizr'
-            ]
-        },
-        {
+        // {
+        //     // shared is a common layer of code
+        //     name: '../shared',
+        //     include: [
+        //         'bootstrap-page',
+        //         'jquery',
+        //         'domReady',
+        //         'use',
+        //         'modernizr'
+        //     ]
+        // },
+        // {
             // home.html is a minified page script with no deps
             // though is not excluded from deps
             // -> view-home-specific-component.js
             // -> view-home-bar-component.js
             // ^ prossibly only components used on the home page?
-            name: '../page-home',
-            include: [
-                
-            ],
-            exclude: [
-                '../shared'
-            ]
-        }
+        //     name: '../home',
+        //     include: [
+        //         'home-page'
+        //     ],
+        //     exclude: [
+        //         '../shared'
+        //     ]
+        // }
     ]
 }

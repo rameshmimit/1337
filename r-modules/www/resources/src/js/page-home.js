@@ -1,3 +1,3 @@
-require(['view-bootstrap'], function(){
-	require(['view-home']);
+require(['app/main-bootstrap'], function(){
+	require(['app/main-home']);
 });

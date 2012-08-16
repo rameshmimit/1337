@@ -1,45 +1,51 @@
 !function(global, doc, require, undefined){
-
-    console.log('• index OK!');
-
-    require(['view-bootstrap'], function (){
-        console.log(' • boostrap OK!');
-
-        require(
-        [
-        	'domReady', 
-        	'jquery', 
-        	'use!modernizr',
-        	'module-foo',
-        	'module-bar',
-        	'module-baz'
-        ], 
-
-    	function(domReady, $, modernizr, foo, bar, baz){
-    		console.log('  • require callback OK!');
-
-            var args = [].splice.call(arguments,0);
-            var argNames = ['domReady', '$', 'modernizr', 'foo', 'bar', 'baz'];
-
-            function __init__(args){
-                console.log('   • init OK!');
-
-                // test dependencies
-                for (var i = 0; i <= args.length -1; i++) {
-                    var arg = args[i];
-                    var nme = argNames[i];
-                    var msg = arg ? ' OK!' : ' FAIL!';
-
-                    console.log('    • ' + nme + msg);
-                };
+    var indent = {
+        t:false,
+        next: function(){
+            if(this.t === false){
+                this.t = '';
+                return this.t;
             }
 
-            __init__(args);
+            this.t = this.t + '    ';
+            return this.t;
+        }
+    }
+    console.log(indent.next() + '• index OK!');
 
+    require(
+    [
+    	// 'domReady', 
+    	// 'jquery', 
+    	// 'use!modernizr',
+    	// 'module-foo',
+    	// 'module-bar',
+    	// 'module-baz'
+    ], 
 
-        }); // #eo inner require call
+	function(domReady, $, modernizr, foo, bar, baz){
+		console.log(indent.next() + '• require callback OK!');
 
-    }); // #eo outer require call
+        // var args = [].splice.call(arguments,0);
+        // var argNames = ['domReady', '$', 'modernizr', 'foo', 'bar', 'baz'];
+
+        function __init__(args){
+            console.log(indent.next() + '• init OK!');
+
+            // test dependencies
+            // for (var i = 0; i <= args.length -1; i++) {
+            //     var arg = args[i];
+            //     var nme = argNames[i];
+            //     var msg = arg ? ' OK!' : ' FAIL!';
+
+            //     console.log('    • ' + nme + msg);
+            // };
+        }
+
+        // __init__(args);
+        __init__();
+
+    }); // #eo require call
 
 
 }(this, this.document, require);
