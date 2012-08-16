@@ -1,1 +1,0 @@
-!function(e,t,n,r){console.log("• index OK!"),n(["view-bootstrap"],function(){console.log("• boostrap OK!"),n(["domReady","jquery","foo","bar","baz"],function(e,t,n,r,i,s){for(var o=0;o<=arguments.length-1;o++){var u=arguments[o],a=u?" OK":" FAIL";console.log("• DEP "+o+a)}})})}(this,this.document,require)
