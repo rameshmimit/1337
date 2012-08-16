@@ -1,19 +1,20 @@
 {
     // app dir is relative to r.js
     // app dir is what r.js will copy over
-    appDir: '../r-only-test/resources/src/js/',
+    appDir: '../www/resources/src/js/',
 
     // base url is relative to appDir
     // base url sets context for all require / define / module names
     baseUrl: './app',
 
     // dir is our output dir when not concatinating into one glob.js
-    dir: '../r-only-test/resources/js',
+    dir: '../www/resources/js',
 
     'paths': {
-        'jquery'  : '../lib/jquery/jquery-1.7.2.min',
-        'domReady': '../lib/require/domReady',
-        'use'     : '../lib/require/use'
+        'jquery'    : '../lib/jquery/jquery-1.7.2.min',
+        'domReady'  : '../lib/require/domReady',
+        'use'       : '../lib/require/use',
+        'modernizr' : '../lib/modernizr/modernizr-2.5.3.min.js'
     },
     
     // maybe this isn't what we want, sub-layer dependencies
@@ -43,7 +44,8 @@
                 'view-bootstrap',
                 'jquery',
                 'domReady',
-                'use'
+                'use',
+                'modernizr'
             ]
         },
         {
@@ -52,7 +54,7 @@
             // -> view-home-specific-component.js
             // -> view-home-bar-component.js
             // ^ prossibly only components used on the home page?
-            name: '../home.html',
+            name: '../page-home',
             include: [
                 
             ],
