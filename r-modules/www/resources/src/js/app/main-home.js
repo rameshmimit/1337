@@ -1,49 +1,36 @@
 !function(global, doc, require, undefined){
-    var indent = {
-        t:false,
-        next: function(){
-            if(this.t === false){
-                this.t = '';
-                return this.t;
-            }
-
-            this.t = this.t + '    ';
-            return this.t;
-        }
-    }
-    console.log(indent.next() + '• index OK!');
 
     require(
     [
-    	// 'domReady', 
-    	// 'jquery', 
-    	// 'use!modernizr',
-    	// 'module-foo',
-    	// 'module-bar',
-    	// 'module-baz'
+    	'domReady', 
+    	'jquery', 
+    	'use!modernizr',
+    	'app/module-foo',
+    	'app/module-bar',
+    	'app/module-baz',
+        'app/util-debug'
     ], 
 
-	function(domReady, $, modernizr, foo, bar, baz){
-		console.log(indent.next() + '• require callback OK!');
-
-        // var args = [].splice.call(arguments,0);
-        // var argNames = ['domReady', '$', 'modernizr', 'foo', 'bar', 'baz'];
+    // require callback, executes when all deps above have loaded
+	function(domReady, $, modernizr, foo, bar, baz, debug){
+        
+        var indtr = debug.indenter();
+        var args = [].splice.call(arguments,0);
+        var argNames = ['domReady', '$', 'modernizr', 'foo', 'bar', 'baz', 'debug'];
 
         function __init__(args){
-            console.log(indent.next() + '• init OK!');
+            console.log(indtr.next() + '• page-home running OK!');
+            
+            var depsStatus = debug.testDeps(args, argNames);
+            
+            indtr.next();
 
-            // test dependencies
-            // for (var i = 0; i <= args.length -1; i++) {
-            //     var arg = args[i];
-            //     var nme = argNames[i];
-            //     var msg = arg ? ' OK!' : ' FAIL!';
-
-            //     console.log('    • ' + nme + msg);
-            // };
+            for(var x in depsStatus){
+                console.log(indtr.current() + '• ' + x + depsStatus[x]);
+            }
         }
 
-        // __init__(args);
-        __init__();
+        __init__(args);
 
     }); // #eo require call
 

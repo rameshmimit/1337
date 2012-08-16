@@ -1,6 +1,6 @@
 // defines a simple module with two dependencies
 define(
-    ['module-foo', 'module-bar'],
+    ['app/module-foo', 'app/module-bar'],
     function(foo, bar){
         
         var self = {};
