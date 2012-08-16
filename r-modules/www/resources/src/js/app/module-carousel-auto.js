@@ -31,11 +31,11 @@ define(['app/module-carousel-base', 'app/util-timer'], function(carousel, timer)
 			o_timer.start();
 		}
 		function onTimer(){
-			console.log('• carousel-auto -> changed carousel pos = ' + o_carousel.next());
+			console.log('• changed carousel pos = ' + o_carousel.next());
 			i++
 
 			if(i === max){
-				console.log('• carousel-auto -> stopping carousel!')
+				console.log('• stopping carousel!')
 				o_timer.stop();
 			}
 		}

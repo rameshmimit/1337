@@ -44,7 +44,7 @@ require(['main-bootstrap', 'module-carousel'], function(){
         	'carousel',
         	'autoCarousel'];
 
-        function __init__(args){
+        function __init__(){
             console.log(indent.next() + '• main-home running OK!');
             
             var depsStatus = debug.testDeps(args, argNames);
@@ -61,15 +61,16 @@ require(['main-bootstrap', 'module-carousel'], function(){
             console.log(indent.next() + indent.next() + '• carousel pos = ' + homeCarousel.next());
             console.log(indent.current() + '• carousel pos = ' + homeCarousel.next());
             console.log(indent.current() + '• carousel pos = ' + homeCarousel.next());
-            console.log(indent.current() + '• carousel pos = ' + homeCarousel.prev() + '\n');
+            console.log(indent.current() + '• carousel pos = ' + homeCarousel.prev());
 
 
             // test auto carousel
+            console.log('\n' + '• testing auto carousel');
             var homeAutoCarousel = autoCarousel.create();
             homeAutoCarousel.run();
         }
 
-        __init__(args);
+        __init__();
 
     }); // #eo inner require call
 
