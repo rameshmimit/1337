@@ -1,1 +1,1 @@
-require(["view-bootstrap"],function(){require(["view-home"])}),define("home.html",[],function(){})
+require(["view-bootstrap"],function(){require(["view-home"])}),define("../home.html",[],function(){})

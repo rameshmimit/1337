@@ -1,19 +1,19 @@
 
-shared.js
+app/../shared.js
 ----------------
-shared.js
+app/../shared.js
 app/view-bootstrap.js
 lib/jquery/jquery-1.7.2.min.js
 lib/require/domReady.js
 lib/require/use.js
 
-foo-bar-baz.js
+app/../foo-bar-baz.js
 ----------------
-foo-bar-baz.js
+app/../foo-bar-baz.js
 app/module-foo.js
 app/module-bar.js
 app/module-baz.js
 
-home.html.js
+app/../home.html.js
 ----------------
-home.html.js
+app/../home.html.js
