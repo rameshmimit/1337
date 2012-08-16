@@ -25,7 +25,7 @@
     // many other options, github.com/mishoo/Uglify.js
     uglify: {
         // debugging, will output non-minified / indented code
-        'beautify': true
+        'beautify': false
     },
 
     // modules define our final output
