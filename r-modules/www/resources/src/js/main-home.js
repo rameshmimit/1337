@@ -1,5 +1,6 @@
 
 // enforce bootstrap to load
+// enforce carousel blob to load
 require(['main-bootstrap', 'module-carousel'], function(){
 
 	console.log('main-home v.0.0.1');

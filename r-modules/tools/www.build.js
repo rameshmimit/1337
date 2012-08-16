@@ -30,6 +30,8 @@
 
     // modules define our final output
     modules: [
+
+        // build 'common' code layer 
         {
             'name': 'main-bootstrap',
             'include': [
@@ -41,6 +43,8 @@
                 'app/util-timer'
             ]
         },
+
+        // build carousel module from parts
         {
             'name':'module-carousel',
             'include': [

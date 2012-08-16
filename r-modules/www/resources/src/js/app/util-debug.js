@@ -1,14 +1,15 @@
 define(function(){
 	
-	var self = {};
+	var __static__ = {};
 
-	function __new__(){
-		self.testDeps = testDeps;
-		self.indent = indent;
+	function __init__(){
+		__static__.testDeps = testDeps;
+		__static__.indent = indent;
 
-		// returns itself
-		return self;
+		return __static__;
 	}
+
+	// static methods //
 
 	function testDeps(args, argNames){
 		var result = {};
@@ -59,6 +60,6 @@ define(function(){
 		}
 	}
 
-	// will return self to expose public interface
-	return __new__();
+	// only returns a static interface, there is no __new__ call avail.
+	return __init__();
 });
