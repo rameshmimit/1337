@@ -1,6 +1,7 @@
 {
     // app dir is relative to r.js
     // app dir is what r.js will copy over
+    // think of it as the src directory
     appDir: '../www/resources/src/js/',
 
     // base url is relative to appDir
@@ -8,6 +9,7 @@
     baseUrl: './',
 
     // dir is our output dir when not concatinating into one glob.js
+    // think of this as our bin
     dir: '../www/resources/js/',
 
     'paths': {
@@ -19,13 +21,13 @@
     
     // maybe this isn't what we want, sub-layer dependencies
     // might be better off minified into their own modules
-    findNestedDependencies: true,
+    // findNestedDependencies: true,
     
     // we don't want to deploy src files
     // debug maybe put this to false for uncombined modules during testing
     // call to r.js will take this in a cli arg as well
     // build call can have debug flag that will set appropriate options in fab file
-    // removeCombined: true,
+    removeCombined: true,
     
     // skipModuleInsertion: true, // may need this if using non AMD code
 
