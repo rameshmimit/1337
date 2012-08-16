@@ -56,12 +56,16 @@ require(['main-bootstrap', 'module-carousel'], function(){
 
             console.log('\n' + indent.reset() + '• testing carousel');
             // test carousel
-            console.log(indent.next() + indent.next() + '• carousel pos = ' + carousel.next());
-            console.log(indent.current() + '• carousel pos = ' + carousel.prev() + '\n');
+            var homeCarousel = carousel.create();
+            console.log(indent.next() + indent.next() + '• carousel pos = ' + homeCarousel.next());
+            console.log(indent.current() + '• carousel pos = ' + homeCarousel.next());
+            console.log(indent.current() + '• carousel pos = ' + homeCarousel.next());
+            console.log(indent.current() + '• carousel pos = ' + homeCarousel.prev() + '\n');
 
 
             // test auto carousel
-            autoCarousel.run();
+            var homeAutoCarousel = autoCarousel.create();
+            homeAutoCarousel.run();
         }
 
         __init__(args);

@@ -1,27 +1,40 @@
 define(function(){
+	var __static__ = {};
 
-	var self = {};
-	var interval = false;
+	// inits only a create method to get distict carousel instances
+	function __init__(){
+		__static__.create = __new__;
+		return __static__;
+	}
 
+	// actual timer module
 	function __new__(){
-		self.stop = stop;
-		self.start = start;
+		var self = {};
+		var interval = false;
 
-		return self;
-	}
+		function __init__(){
+			self.start = start;
+			self.stop = stop;
 
-	function start(){
-		interval = setInterval(onInterval, 1000);
-	}
-	function stop(){
-		clearInterval(interval);
-	}
-	function onInterval(){
-		if(typeof self.next === 'function'){
-			self.next();
+			return self;
 		}
+
+		function start(){
+			interval = setInterval(onInterval, 1000);
+		}
+		function stop(){
+			clearInterval(interval);
+			interval = false;
+		}
+		function onInterval(){
+			if(typeof self.next === 'function'){
+				self.next();
+			}
+		}
+
+		return __init__();
 	}
 	
-	return __new__();
-
+	// return static version of module
+	return __init__();
 });

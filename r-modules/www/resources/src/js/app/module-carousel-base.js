@@ -1,24 +1,37 @@
 define(function(){
+	var __static__ = {};
 
-	var self = {};
-	var i = 0;
+	// inits only a create method to get distict carousel instances
+	function __init__(){
+		__static__.create = __new__;
+		return __static__;
+	}
 
+	// actual carousel module
 	function __new__(){
-		self.next = next;
-		self.prev = prev;
-		return self;
-	}
+		var i = 0;
+		var self = {};
 
-	function next(){
-		i++;
-		return i;
-	}
+		function __init__(){
+			self.next = next;
+			self.prev = prev;
 
-	function prev(){
-		i--;
-		return i;
+			return self;
+		}
+
+		function next(){
+			i++;
+			return i;
+		}
+		function prev(){
+			i--;
+			return i;
+		}
+
+		return __init__();
 	}
 	
-	return __new__();
 
+	// return static version of module
+	return __init__();
 });
