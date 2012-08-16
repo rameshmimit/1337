@@ -4,7 +4,7 @@ define(function(){
 
 	function __new__(){
 		self.testDeps = testDeps;
-		self.indenter = indenter;
+		self.indent = indent;
 
 		// returns itself
 		return self;
@@ -24,21 +24,37 @@ define(function(){
         return result;
 	}
 
-	function indenter(){
+	function indent(){
 		return {
-			'indent': false,
-			'increment': '    ',
+			'indent': '',
+			'increment': 0,
+			'space': '    ',
 			'next': function(){
-				if(this.indent !== false){
-					this.indent += this.increment;
+				if(this.increment > 0){
+					this.indent += this.space;
 				}else{
 					this.indent = '';
 				}
 
+				this.increment++;
 				return this.indent;
 			}, 
 			'current': function(){
-				return this.increment;
+				return this.indent;
+			},
+			'last':function(){
+				this.indent = '';
+				this.increment--
+				
+				for(var i = 0; i < this.increment; i++){
+					this.indent += this.space;
+				}
+			},
+			'reset':function(){
+				this.indent = '';
+				this.increment = 0;
+
+				return this.indent;
 			}
 		}
 	}

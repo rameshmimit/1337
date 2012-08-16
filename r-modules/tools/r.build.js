@@ -19,28 +19,19 @@
         'modernizr' : 'lib/modernizr/modernizr-2.5.3.min'
     },
     
-    // maybe this isn't what we want, sub-layer dependencies
-    // might be better off minified into their own modules
-    // findNestedDependencies: true,
-    
     // we don't want to deploy src files
-    // debug maybe put this to false for uncombined modules during testing
-    // call to r.js will take this in a cli arg as well
-    // build call can have debug flag that will set appropriate options in fab file
     removeCombined: true,
-    
-    // skipModuleInsertion: true, // may need this if using non AMD code
 
     // many other options, github.com/mishoo/Uglify.js
     uglify: {
         // debugging, will output non-minified / indented code
-        // 'beautify': true
+        'beautify': true
     },
 
     // modules define our final output
     modules: [
         {
-            'name': 'page-bootstrap',
+            'name': 'main-bootstrap',
             'include': [
                 'jquery',
                 'modernizr',
