@@ -1,7 +1,7 @@
 {
-    appDir: '../www_test/resources/src/js/',
+    appDir: '../r-only-test/resources/src/js/',
     baseUrl: './',
-    dir: '../www_test/resources/js',
+    dir: '../r-only-test/resources/js',
 
     'paths': {
         'jquery'  : 'lib/jquery/jquery-1.7.2.min',
