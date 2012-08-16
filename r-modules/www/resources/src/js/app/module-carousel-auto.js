@@ -1,4 +1,4 @@
-define(['app/module-carousel', 'app/util-timer'], function(carousel, timer){
+define(['app/module-carousel-base', 'app/util-timer'], function(carousel, timer){
 	var self = {};
 	var i = 0;
 

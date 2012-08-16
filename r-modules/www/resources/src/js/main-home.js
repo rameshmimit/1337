@@ -1,6 +1,6 @@
 
 // enforce bootstrap to load
-require(['main-bootstrap'], function(){
+require(['main-bootstrap', 'module-carousel'], function(){
 
 	console.log('main-home v.0.0.1');
 
@@ -14,7 +14,7 @@ require(['main-bootstrap'], function(){
     	'app/module-bar',
     	'app/module-baz',
         'app/util-debug',
-        'app/module-carousel', 
+        'app/module-carousel-base', 
         'app/module-carousel-auto'
     ], 
 
@@ -39,7 +39,7 @@ require(['main-bootstrap'], function(){
         	'foo', 
         	'bar', 
         	'baz', 
-        	'debug', 
+        	'debug',
         	'carousel',
         	'autoCarousel'];
 

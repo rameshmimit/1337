@@ -37,7 +37,18 @@
                 'modernizr',
                 'domReady',
                 'use',
-                'app/util-debug'
+                'app/util-debug',
+                'app/util-timer'
+            ]
+        },
+        {
+            'name':'module-carousel',
+            'include': [
+                'app/module-carousel-base',
+                'app/module-carousel-auto'
+            ],
+            'exclude': [
+                'main-bootstrap'
             ]
         }
     ]
