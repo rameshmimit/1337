@@ -5,3 +5,4 @@
 *.swp
 r-modules/r-only-test/resources/js/*
 r-modules/www/resources/js/*
+rifle/node_modules
