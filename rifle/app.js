@@ -6,8 +6,8 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path')
-  , io = require('socket.io').listen(8080);
+  , path = require('path');
+  // , io = require('socket.io').listen(8080);
 
 var app = express();
 
@@ -50,19 +50,19 @@ http.createServer(app).listen(app.get('port'), function(){
 //   });
 // });
 
-var rifle = io
-  .of('/rifle')
-  .on('connection', function(socket){
-    socket.emit('test', {data:'rifle test'});
+// var rifle = io
+//   .of('/rifle')
+//   .on('connection', function(socket){
+//     socket.emit('test', {data:'rifle test'});
 
-    socket.on('rifle-refresh', function(data){
-      console.log('rifle refresh :: ', data);
+//     socket.on('rifle-refresh', function(data){
+//       console.log('rifle refresh :: ', data);
 
-      socket.emit('do-rifle-refresh', {data:'rifle do refresh'});
+//       socket.emit('do-rifle-refresh', {data:'rifle do refresh'});
 
-    });
+//     });
 
-  });
+//   });
 
 // chat example
 // var chat = io

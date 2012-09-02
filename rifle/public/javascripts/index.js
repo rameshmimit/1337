@@ -60,25 +60,39 @@
 		var ctrl = false;
 		var shft = false;
 		var equalPlus = false;
+		var port = 3456;
 
-		var rifle = io.connect('http://localhost:8080/rifle');
+		var rifle2 = io.connect('http://localhost:' + port + '/rifle');
+		// var rifle = io.connect('http://localhost:8080/rifle');
 
-		function sendRifleRefresh(socket){
-			socket.emit('rifle-refresh', {data:'rifle-refresh'});
+		// function sendRifleRefresh(socket){
+		// 	socket.emit('rifle-refresh', {data:'rifle-refresh'});
+		// }
+		function sendRifle2Refresh(socket){
+			socket.emit('refresh-request', {});
+		}
+		function refresh(){
+			global.location.reload(true);
 		}
 
-		rifle.on('connect', function(data){
-			console.log('rifle :: connected');
+		rifle2.on('connect', function(data){
+			console.log('rifle2 :: connected');
 		});
+		// rifle.on('connect', function(data){
+		// 	console.log('rifle :: connected');
+		// });
 
 		$('.js-rifle-refresh').on('click', function(e){
-			console.log('rifle :: refresh click');
-			sendRifleRefresh(rifle);
+			// sendRifleRefresh(rifle);s
+			sendRifle2Refresh(rifle2);
 		});
 
-		rifle.on('do-rifle-refresh', function(data){
-			console.log('rifle :: do refresh ', data);
-			global.location.reload(true);
+		// rifle.on('do-rifle-refresh', function(data){
+		// 	console.log('rifle :: do refresh ', data);
+		// 	refresh();
+		// });
+		rifle2.on('refresh-notify', function(data){
+			refresh();
 		});
 
 		// keyboard handling
@@ -143,8 +157,9 @@
 				shft && 
 				equalPlus ){
 
-				// console.log('hotkey detected!');
-				sendRifleRefresh(rifle	);	
+				console.log('hotkey detected!');
+				// sendRifleRefresh(rifle	);	
+				sendRifle2Refresh(rifle2);
 			}
 		}
 	});

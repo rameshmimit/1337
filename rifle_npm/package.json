@@ -1,0 +1,25 @@
+{
+  "name": "rifle",
+  "version": "0.0.0",
+  "description": "small wrapper around socket.io to enable a socket that facilitates a simultaneous page refresh across multiple devices.",
+  "main": "rifle.js",
+  "scripts": {
+    "test": "r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://todo.put/this/on/git"
+  },
+  "keywords": [
+    "socket",
+    "socketio",
+    "mobile",
+    "web",
+    "refresh"
+  ],
+  "author": "Aubrey Taylor",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "socket.io": "~0.9.10"
+  }
+}
