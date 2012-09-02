@@ -21,8 +21,9 @@
 	
 	// ways to integrate this
 	// /rifle page ?
-	// hotkey ? 
-	// set up cli to take single 'rifle r' command
+	// hotkey ? *CHECK*
+	// set up cli to take single 'rifle r' command, npm module
+	// 
 
 	$(function(){
 		// var rifle = io.connect('http://localhost:8080/rifle');
@@ -38,18 +39,34 @@
 
 		// });
 
-		var socket = io.connect('http://localhost:8080');
-		socket.on('test', function(data){
-			console.log('socket event received :: ', data);
+		// var socket = io.connect('http://localhost:8080');
+		// socket.on('test', function(data){
+		// 	console.log('socket event received :: ', data);
 
-		});
+		// });
 
-		$('.js-refresh').on('click', function(e){
-			console.log('refresh');
-			socket.emit('refresh', {data:'refresh'});
-		});
+		// $('.js-refresh').on('click', function(e){
+		// 	console.log('refresh');
+		// 	socket.emit('refresh', {data:'refresh'});
+		// });
+		var KEY_CODE_CTRL       = 17;
+		var KEY_CODE_SHIFT      = 16;
+		var KEY_CODE_EQUAL_PLUS = 187;
+		var KEY_ID_CTRL         = "Control";
+		var KEY_ID_SHIFT        = "Shift";
+		var KEY_ID_PLUS         = "U+002B";
+		var KEY_ID_EQUAL        = "U+003D";
+
+		var ctrl = false;
+		var shft = false;
+		var equalPlus = false;
 
 		var rifle = io.connect('http://localhost:8080/rifle');
+
+		function sendRifleRefresh(socket){
+			socket.emit('rifle-refresh', {data:'rifle-refresh'});
+		}
+
 		rifle.on('connect', function(data){
 			console.log('rifle :: connected');
 		});
@@ -64,25 +81,10 @@
 			global.location.reload(true);
 		});
 
-		function sendRifleRefresh(socket){
-			socket.emit('rifle-refresh', {data:'rifle-refresh'});
-		}
-
 		// keyboard handling
 		// no jquery (will need x-browser help)
 		// see: http://www.quirksmode.org/js/keys.html for ref
-
-		var KEY_CODE_CTRL       = 17;
-		var KEY_CODE_SHIFT      = 16;
-		var KEY_CODE_EQUAL_PLUS = 187;
-		var KEY_ID_CTRL         = "Control";
-		var KEY_ID_SHIFT        = "Shift";
-		var KEY_ID_PLUS         = "U+002B";
-		var KEY_ID_EQUAL        = "U+003D";
-
-		var ctrl = false;
-		var shft = false;
-		var equalPlus = false;
+		// build itsy-hotkeys ? :^)
 
 		document.onkeyup = function(e){
 			// console.log(e.which, e.keyIdentifier, e);

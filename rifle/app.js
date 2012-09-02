@@ -42,13 +42,13 @@ http.createServer(app).listen(app.get('port'), function(){
 //   });
 // });
 
-io.sockets.on('connection', function(socket){
-  socket.emit('test', {data:'test'});
+// io.sockets.on('connection', function(socket){
+//   socket.emit('test', {data:'test'});
 
-  socket.on('refresh', function(data){
-    console.log('refresh :: ', data);
-  });
-});
+//   socket.on('refresh', function(data){
+//     console.log('refresh :: ', data);
+//   });
+// });
 
 var rifle = io
   .of('/rifle')
