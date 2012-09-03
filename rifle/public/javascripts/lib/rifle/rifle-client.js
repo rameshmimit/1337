@@ -1,13 +1,13 @@
-!function(global, doc, io, undefined){
+var Rifle = Rifle || {};
 
-	var Rifle = Rifle || {};
+!function(global, doc, socketio, rifle, undefined){
 
 	/**
 	 * @requires socket.io.js
 	 * @requires rifle-hotkey.js
 	 */
 
-	Rifle.Client = function(){
+	rifle.Client = function(){
 		var self = {};
 
 		var domain = 'http://localhost';
@@ -19,7 +19,8 @@
 
 		function __new__(){
 			self.connect = connect;
-			self.enable_hotkey = enable_hotkey;
+			self.refresh = refresh;
+			self.hotkey = hotkey;
 
 			__init__();
 			return self;
@@ -30,24 +31,29 @@
 
 		// public functions
 		function connect(){
-			socket = io.connect(domain + ':' + port + io_namespace);
+			socket = socketio.connect(domain + ':' + port + io_namespace);
 			socket.on('connect', onSocketConnected);
 			socket.on('refesh-notify', onSocketRefreshNotify);
 
 			return self;
 		}
-		function enable_hotkey(){
+		function refresh(){
+			console.log('refresh');
+			emitRefreshRequest();
+		}
+		function hotkey(){
 			hotkey = Rifle.Hotkey().enable(emitRefreshRequest);
-
 			return self;
 		}
 
 		// private functions
 		function emitRefreshRequest(){
+			console.log('rifle-client :: emitRefreshRequest')
 			socket.emit('refresh-request', {});
 		}
-		function refresh(){
-			global.location.reload(true);
+		function reload(){
+			console.log('rifle-client :: reloading!');
+			// global.location.reload(true);
 		}
 
 		// socket event delegates
@@ -55,11 +61,11 @@
 			console.log('rifle-client :: connected');
 		}
 		function onSocketRefreshNotify(data){
-			console.log('rifle-client :: refresh notify');
-			// socket.emit('refresh-request', {});
+			console.log('rifle-client :: onSocketRefreshNotify');
+			// reload();
 		}
 
 		return __new__();
 	}
 
-}(this, document, io);
+}(this, document, io, Rifle);

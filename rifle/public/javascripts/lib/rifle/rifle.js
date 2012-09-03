@@ -1,5 +1,5 @@
-!function(global, doc, Rifle){
+!function(global, doc, rifle){
 
-	Rifle.Client().connect().enable_hotkey();
+	rifle.Client().connect().enable_hotkey();
 
 }(this, document, Rifle);

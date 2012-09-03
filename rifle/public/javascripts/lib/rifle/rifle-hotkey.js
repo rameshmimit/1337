@@ -1,8 +1,8 @@
-!function(global, doc, undefined){
+var Rifle = Rifle || {};
 
-	var Rifle = Rifle || {};
+!function(global, doc, rifle, undefined){
 
-	Rifle.Hotkey = function(){
+	rifle.Hotkey = function(){
 		var self = {};
 	
 		var KEY_CODE_CTRL       = 17;
@@ -109,4 +109,4 @@
 		return __new__();
 	}
 
-}(this, document);
+}(this, document, Rifle);
