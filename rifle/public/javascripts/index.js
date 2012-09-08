@@ -12,7 +12,8 @@
 			jq_refreshLink.on('click', onRefreshClick);
 		}
 
-		function onRefreshClick(){
+		function onRefreshClick(e){
+			e.preventDefault();
 			console.log('index :: onRefreshClick');
 			rifleClient.refresh();
 		}

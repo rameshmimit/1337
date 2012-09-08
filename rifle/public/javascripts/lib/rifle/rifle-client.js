@@ -33,7 +33,8 @@ var Rifle = Rifle || {};
 
 		// public functions
 		function connect(){
-			socket = socketio.connect(domain + ':' + port + io_namespace);
+			// socket = socketio.connect(domain + ':' + port + io_namespace);
+			socket = socketio.connect(domain + ':' + port);
 			socket.on('connect', onSocketConnected);
 			socket.on('refresh-notify', onSocketRefreshNotify);
 
@@ -56,7 +57,7 @@ var Rifle = Rifle || {};
 		}
 		function reload(){
 			console.log('rifle-client :: reloading!');
-			// global.location.reload(true);
+			global.location.reload(true);
 		}
 
 		// socket event delegates
