@@ -2,10 +2,10 @@
 
 	$(function(){
 		console.log('index :: loaded');
-		console.log($, rifle);
+		// console.log($, rifle);
 
 		var jq_refreshLink = $('.js-rifle-refresh');
-		var rifleClient;
+		// var rifleClient;
 
 		function init(){
 			rifleClient = rifle.Client().connect().hotkey();
@@ -13,6 +13,7 @@
 		}
 
 		function onRefreshClick(){
+			console.log('index :: onRefreshClick');
 			rifleClient.refresh();
 		}
 

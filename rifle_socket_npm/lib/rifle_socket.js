@@ -7,6 +7,7 @@ module.exports = function(){
 		, socket;
 
 	function __new__(){
+		console.log('rifle_socket :: __new__');
 		self.parseArgs = parseArgs;
 
 		__init__();
@@ -14,6 +15,7 @@ module.exports = function(){
 	}
 	function __init__(){
 		// empty
+		console.log('rfile_socket :: __init__');
 	}
 
 	function parseArgs(val, index, array){
@@ -22,7 +24,6 @@ module.exports = function(){
 			port = parseInt(port.pop(port.length -1), 10);
 		}
 		if(val === 'run'){
-			console.log('run');
 			run();
 		}
 	}
@@ -30,20 +31,23 @@ module.exports = function(){
 
 	// private functions
 	function run(){
+		console.log('rifle_socket :: run');
 		rifle = socketio.listen(port).of('/rifle');
 		rifle.on('connection', onConnection);
 	}
-
 	function emitRefreshNotify(){
+		console.log('rfile_socket :: emitRefreshNotify');
 		socket.emit('refresh-notify', {});
 	}
 
 	// socket / rifle event delegates
 	function onConnection(sock){
+		console.log('rifle_socket :: onConnection');
 		socket = sock;
 		socket.on('refresh-request', onRefreshRequest);
 	}
 	function onRefreshRequest(data){
+		console.log('rifle_socket :: onRefreshRequest');
 		emitRefreshNotify();
 	}
 

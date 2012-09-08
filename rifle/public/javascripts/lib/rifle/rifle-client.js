@@ -18,14 +18,16 @@ var Rifle = Rifle || {};
 		var socket;
 
 		function __new__(){
+			console.log('rifle_client :: __new__');
 			self.connect = connect;
 			self.refresh = refresh;
-			self.hotkey = hotkey;
+			self.hotkey  = hotkey;
 
 			__init__();
 			return self;
 		}
 		function __init__(){
+			console.log('rifle_client :: __init__');
 			// empty
 		}
 
@@ -33,15 +35,16 @@ var Rifle = Rifle || {};
 		function connect(){
 			socket = socketio.connect(domain + ':' + port + io_namespace);
 			socket.on('connect', onSocketConnected);
-			socket.on('refesh-notify', onSocketRefreshNotify);
+			socket.on('refresh-notify', onSocketRefreshNotify);
 
 			return self;
 		}
 		function refresh(){
-			console.log('refresh');
+			console.log('rifle_client :: refresh');
 			emitRefreshRequest();
 		}
 		function hotkey(){
+			console.log('rfile_client :: hotkey');
 			hotkey = Rifle.Hotkey().enable(emitRefreshRequest);
 			return self;
 		}
@@ -62,7 +65,7 @@ var Rifle = Rifle || {};
 		}
 		function onSocketRefreshNotify(data){
 			console.log('rifle-client :: onSocketRefreshNotify');
-			// reload();
+			reload();
 		}
 
 		return __new__();
