@@ -2,6 +2,17 @@ var Rifle = Rifle || {};
 
 !function(global, doc, socketio, rifle, undefined){
 
+	rifle.config = {
+		domain: 'http://localhost',
+		port: '3456',
+		ns: '/rifle',
+		connectMsg: 'connect',
+		requestMsg: 'refresh-request',
+		notifyMsg: 'refresh-notify'
+	}
+
+	//console.log('!! :: socketio =', socketio);
+
 	/**
 	 * @requires socket.io.js
 	 * @requires rifle-hotkey.js
@@ -10,9 +21,14 @@ var Rifle = Rifle || {};
 	rifle.Client = function(){
 		var self = {};
 
-		var domain = 'http://localhost';
-		var port = 3456;
-		var io_namespace = '/rifle';
+		var domain     = rifle.config.domain;
+		var port       = rifle.config.port;
+		var ns         = rifle.config.ns;
+		var connectMsg = rifle.config.connectMsg;
+		var notifyMsg  = rifle.config.notifyMsg;
+		var requestMsg = rifle.config.requestMsg;
+
+		var _callback = false;
 
 		var hotkey;
 		var socket;
@@ -32,32 +48,23 @@ var Rifle = Rifle || {};
 		}
 
 		// public functions
-		function connect(){
-			// socket = socketio.connect(domain + ':' + port + io_namespace);
-			socket = socketio.connect(domain + ':' + port);
-			socket.on('connect', onSocketConnected);
-			socket.on('refresh-notify', onSocketRefreshNotify);
+		function connect(callback){
+			_callback = callback || false;
+
+			socket = socketio.connect(domain + ':' + port);// + ns);
+			socket.on(connectMsg, onSocketConnected);
+			socket.on(notifyMsg, onSocketRefreshNotify);
 
 			return self;
 		}
 		function refresh(){
-			console.log('rifle_client :: refresh');
-			emitRefreshRequest();
+			console.log('rifle_client :: ', requestMsg);
+			socket.emit(requestMsg, {});
 		}
 		function hotkey(){
 			console.log('rfile_client :: hotkey');
 			hotkey = Rifle.Hotkey().enable(emitRefreshRequest);
 			return self;
-		}
-
-		// private functions
-		function emitRefreshRequest(){
-			console.log('rifle-client :: emitRefreshRequest')
-			socket.emit('refresh-request', {});
-		}
-		function reload(){
-			console.log('rifle-client :: reloading!');
-			global.location.reload(true);
 		}
 
 		// socket event delegates
@@ -66,10 +73,19 @@ var Rifle = Rifle || {};
 		}
 		function onSocketRefreshNotify(data){
 			console.log('rifle-client :: onSocketRefreshNotify');
-			reload();
+			
+			if(_callback !== false){
+				console.log('exectuting callback');
+				 _callback();
+			}
+			else{
+				console.log('rifle-client :: no callback specified');
+			}
 		}
 
 		return __new__();
 	}
+
+
 
 }(this, document, io, Rifle);

@@ -13,6 +13,7 @@
 // the listners on the index if that would work
 // certainly its not a big deal I would think to switch to a page
 // and refresh if it saved you 3 or 4 annoying device refreshes.
+// -- chrome extension that sets up the client refresh page?
 
 module.exports = function(){
 	var socketio = require('socket.io');
