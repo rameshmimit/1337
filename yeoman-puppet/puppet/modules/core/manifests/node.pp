@@ -1,9 +1,5 @@
 # node install
-# https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-# sudo apt-get install python-software-properties
-# sudo add-apt-repository ppa:chris-lea/node.js
-# sudo apt-get update
-# sudo apt-get install nodejs npm
+# todo: find way to prevent exec{"install node deps"} fron running over and over
 
 class core::node{
 	$packageList = [

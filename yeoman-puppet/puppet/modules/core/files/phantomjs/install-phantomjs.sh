@@ -3,6 +3,9 @@
 # http://phantomjs.org/download.html
 # download phantom js 1.6.1
 
+# phantom has dep on fontconfig, apt-get install fontconfig seems to work
+# phantom has dep on freetype, apt-get install libfreetype6-dev
+
 echo "getting phantomjs binary"
 wget -N http://phantomjs.googlecode.com/files/phantomjs-1.6.1-linux-i686-dynamic.tar.bz2
 
