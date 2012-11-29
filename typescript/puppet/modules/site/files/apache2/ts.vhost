@@ -1,9 +1,8 @@
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
-    ServerName foo.dev
-    # ServerAlias www.foo.dev
-    DocumentRoot /home/vagrant/projects/foo/public
-    <Directory /home/vagrant/projects/foo/public/>
+    ServerName ts.dev
+    DocumentRoot /home/vagrant/projects/ts
+    <Directory /home/vagrant/projects/ts>
             EnableSendfile Off
             Options Indexes FollowSymLinks MultiViews
             AllowOverride All
@@ -12,11 +11,11 @@
     </Directory>
 
 
-    ErrorLog ${APACHE_LOG_DIR}/foo-error.log
+    ErrorLog ${APACHE_LOG_DIR}/ts-error.log
 
     # Possible values include: debug, info, notice, warn, error, crit,
     # alert, emerg.
     LogLevel error
 
-    CustomLog ${APACHE_LOG_DIR}/foo-access.log combined
+    CustomLog ${APACHE_LOG_DIR}/ts-access.log combined
 </VirtualHost>

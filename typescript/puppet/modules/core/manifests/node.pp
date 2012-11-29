@@ -23,8 +23,4 @@ class core::node{
 		ensure => installed,
 		require => Exec['install node deps'],
 	}
-	exec { "install yeoman":
-		command => "/usr/bin/npm install -g yeoman",
-		require => Package['npm'],
-	}
 }
