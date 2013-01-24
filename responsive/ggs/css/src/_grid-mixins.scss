@@ -1,0 +1,62 @@
+// in a 16 col grid a c1 takes up 100/16%
+// in a 8 col grid a c1 takes up 
+
+/*
+.onecol {
+    width: percentage(~`Math.min(1, (1 / @{num_cols}*Math.ceil(@{num_cols}*1/@{maxcolumns})))`);
+}
+.twocol {
+    width: percentage(~`Math.min(1, (1 / @{num_cols}*Math.ceil(@{num_cols}*2/@{maxcolumns})))  `);
+}
+.threecol {
+    width: percentage(~`Math.min(1, (1 / @{num_cols}*Math.ceil(@{num_cols}*3/@{maxcolumns})))`);
+}
+*/
+
+@mixin columns($num_col){
+	$max_col: 16;
+
+    @for $i from 1 through $max_col {
+        &.c#{$i} {
+            // <rant>
+            // god this is ugly
+            // for the life of me why can't developers organize this shit so normal people can understand it
+            // i mean seriously, how does this read??
+            // horribe
+            // </rant>
+            //
+            $col_proportion: 1 / $num_col;
+            $col_distribution: ceil( $num_col * ($i / $max_col));
+            $col_width: percentage( min( 1, $col_proportion * $col_distribution ) );
+
+            width: $col_width;
+
+            // original
+            // width: percentage(min(1, (1 / $num_col * ceil($num_col * $i / $max_col))));
+            // width: percentage( min(1, ( ( 1 / $num_col ) * ceil( $num_col * ( $i / $max_col ) ) ) ) );
+            // p( min ( 1 / 16 * ceil( 16 * ( 1 / 16 ) ) ) )
+            // p( min ( 0.0625 * ceil ( 16 * 0.0625 ) ) )
+            // p( min ( 0.0625 * 1 ))
+            // 6.25 %
+
+            // p - min 1 or 1 / 8 * ceil - 8 * 1 / 16
+            // p - min 1 or 0.125 * ceil - 0.5
+            // p - min 1 or 0.125 * 1
+            // 12.5 %
+
+            // p converts to percentage (duh)
+            // min guarantees we will always get 100% or less
+            // then we calculate the prortion for each column, 1/ n-cols, 16 = .0625, 8 = .125, 4 = 0.25, 2 = .5
+            // ceil
+            // --> $num_col * ( n-iter / 16 )
+            // calculate the number of colums muliplied by the iteration / 16 (1 - 16 = range 0.0625 - 1)
+            // value inside () gives us the original proportion at 16 columns
+            // muliplying by our num_col will distribute that value over the n-cols (16, 8, 4)
+
+            // width: 50%;
+            // margin-left: $col_width / 2;
+            /* Assuming gutter width = 1.5em */
+            // padding: 0 0.75em;
+        }
+    }
+}

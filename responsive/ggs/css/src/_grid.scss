@@ -1,5 +1,29 @@
-// grid variables
-$line: 24;
-$column: 100% / 18;
-$font-size: 16;
-$em: $font-size * 1;
+*{
+    @include box-sizing(border-box);
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.row{
+    @include clearfix();
+    width: 100%;
+}
+
+/*
+*
+*  Four-column grid active
+*  ----------------------------------------
+*  Margin   | #  1   2   3   4   |   Margin
+*  5.55555% | %  25  50  75  100 | 5.55555%
+*
+*/
+
+.col{
+    float: left;
+    min-height: 1px;
+
+    @include columns(4);
+}

@@ -1,1 +1,21 @@
+@import "variables";
+@import "normalize";
+
+@import "mixins";
+@import "grid-mixins";
+
 @import "grid";
+@import "media-queries";
+
+.row{
+	background: cyan;
+	margin: 0 18/
+	// height: 40px;
+}
+.col{
+	background: magenta;
+
+	height: 40px;
+	//border: 1px solid cyan;
+	//padding: 5px;
+}
