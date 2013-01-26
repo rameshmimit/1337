@@ -1,0 +1,468 @@
+/*
+*
+*  Golden Grid System (1.0) <http://goldengridsystem.com/>
+*  by Joni Korpi                <http://jonikorpi.com/>
+*  licensed under MIT           <http://opensource.org/licenses/mit-license.php>
+*
+*/
+/*
+*
+*  Margin, padding, and border resets
+*  except for form elements
+*
+*/
+/* line 42, src/_demo.scss */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, nav, section, menu, time, mark, audio, video, canvas {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/*
+*
+*  Consistency fixes
+*  adopted from http://necolas.github.com/normalize.css/
+*
+*/
+/* line 56, src/_demo.scss */
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 61, src/_demo.scss */
+body {
+  min-height: 100%;
+  font-size: 100%; }
+
+/* line 66, src/_demo.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section, audio, canvas, video {
+  display: block; }
+
+/* line 69, src/_demo.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 75, src/_demo.scss */
+sup {
+  top: -0.5em; }
+
+/* line 78, src/_demo.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 81, src/_demo.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/* line 86, src/_demo.scss */
+b, strong {
+  font-weight: bold; }
+
+/* line 89, src/_demo.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 92, src/_demo.scss */
+input, textarea, button, select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline; }
+
+/* line 101, src/_demo.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/* line 106, src/_demo.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 113, src/_demo.scss */
+textarea {
+  overflow: auto; }
+
+/* line 116, src/_demo.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+*
+*  Simple fluid media
+*
+*/
+/* line 128, src/_demo.scss */
+figure {
+  position: relative; }
+
+/* line 131, src/_demo.scss */
+figure img, figure object, figure embed, figure video {
+  max-width: 100%;
+  display: block; }
+
+/* line 135, src/_demo.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/*
+*
+*   Zoomable baseline grid
+*   type size presets
+*
+*/
+/* line 148, src/_demo.scss */
+body {
+  /* 16px / 24px */
+  font-size: 1em;
+  line-height: 1.5em; }
+
+/* line 165, src/_demo.scss */
+h3 {
+  /* 16px / 24px */
+  font-size: 1em;
+  line-height: 1.5em;
+  /* 24 */ }
+
+/* line 175, src/_demo.scss */
+h2, h1 {
+  /* 26 / 36px */
+  font-size: 1.625em;
+  line-height: 1.38462em; }
+
+/*
+*  Folded "Sixteen-column" grid
+*  ----------------------------------------------------------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
+*  5.55555% | %  25    25    25    25    50    50    50    50    75    75    75    75    100   100   100   100 | 5.55555%
+*/
+/*
+*  Four-column grid active
+*  ----------------------------------------
+*  Margin   | #  1   2   3   4   |   Margin
+*  5.55555% | %  25  50  75  100 | 5.55555%
+*/
+/* line 211, src/_demo.scss */
+.row {
+  margin: 0 5.55556%;
+  overflow: hidden; }
+
+/* line 215, src/_demo.scss */
+.col {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left; }
+
+/* line 225, src/_demo.scss */
+body {
+  background: pink; }
+
+/* line 229, src/_demo.scss */
+header, #twoway {
+  margin: 0 5.55556%; }
+
+/* line 233, src/_demo.scss */
+h1 {
+  /* 42px / 48px */
+  font-size: 2.625em;
+  line-height: 1.14286em; }
+
+/* line 236, src/_demo.scss */
+h1, h2 {
+  margin: 0.92308em 0 1.38462em; }
+
+/* line 240, src/_demo.scss */
+h2 {
+  font-weight: normal; }
+
+/* line 244, src/_demo.scss */
+h3 {
+  margin: 1.5em 0 1.5em; }
+
+/*
+*  Simple elastic gutters
+*  Note: box-sizing will not work in IE6-7
+*/
+/* line 253, src/_demo.scss */
+#twoway {
+  overflow: hidden; }
+
+/* line 257, src/_demo.scss */
+.wrapper {
+  background: lightgray;
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 14, src/_demo.scss */
+.col.c1 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c2 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c3 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c4 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c5 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c6 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c7 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c8 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c9 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c10 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c11 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c12 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c13 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c14 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c15 {
+  width: 100%; }
+/* line 14, src/_demo.scss */
+.col.c16 {
+  width: 100%; }
+
+/*
+*
+*  Fixes for IE6-8
+*  http://jonikorpi.com/leaving-old-IE-behind/
+*
+*/
+/* line 276, src/_demo.scss */
+.ie body {
+  width: 40em;
+  margin: 0 auto;
+  font-size: 1.0625em; }
+
+/* line 282, src/_demo.scss */
+.ie h1 {
+  /* 42px / 48px */
+  font-size: 2.625em;
+  line-height: 1.14286em;
+  margin: 1.14286em 0 0.57143em; }
+
+/* @media screen and (min-width: 640px) */
+@media screen and (min-width: 40em) {
+  /* line 290, src/_demo.scss */
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    font-size: 1.0625em; }
+
+  /* line 295, src/_demo.scss */
+  h1 {
+    margin: 1.14286em 0 0.57143em; } }
+/*
+*  Folded "Sixteen-column" grid
+*  ----------------------------------------------------------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
+*  5.55555% | %  12.5  12.5  25    25    37.5  37.5  50    50    62.5  62.5  75    75    87.5  87.5  100   100 | 5.55555%
+*/
+/*
+*
+*  Eight-column grid active
+*  ----------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+*
+*
+*/
+/* @media screen and (min-width: 720px) */
+@media screen and (min-width: 45em) {
+  /* line 320, src/_demo.scss */
+  body {
+    /* Reset baseline grid to 16/16 = 1 */
+    font-size: 1em;
+    background: lightskyblue; }
+
+  /* line 326, src/_demo.scss */
+  #twoway .wrapper {
+    float: left; }
+
+  /* line 14, src/_demo.scss */
+  .col.c1 {
+    width: 12.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c2 {
+    width: 12.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c3 {
+    width: 25%; }
+  /* line 14, src/_demo.scss */
+  .col.c4 {
+    width: 25%; }
+  /* line 14, src/_demo.scss */
+  .col.c5 {
+    width: 37.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c6 {
+    width: 37.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c7 {
+    width: 50%; }
+  /* line 14, src/_demo.scss */
+  .col.c8 {
+    width: 50%; }
+  /* line 14, src/_demo.scss */
+  .col.c9 {
+    width: 62.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c10 {
+    width: 62.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c11 {
+    width: 75%; }
+  /* line 14, src/_demo.scss */
+  .col.c12 {
+    width: 75%; }
+  /* line 14, src/_demo.scss */
+  .col.c13 {
+    width: 87.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c14 {
+    width: 87.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c15 {
+    width: 100%; }
+  /* line 14, src/_demo.scss */
+  .col.c16 {
+    width: 100%; } }
+/* @media screen and (min-width: 888px) */
+@media screen and (min-width: 55.5em) {
+  /* line 338, src/_demo.scss */
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    background: lightskyblue; } }
+/* @media screen and (min-width: 984px) */
+@media screen and (min-width: 61.5em) {
+  /* line 349, src/_demo.scss */
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+    background: lightskyblue; } }
+/* @media screen and (min-width: 1200px) */
+@media screen and (min-width: 75em) {
+  /* line 365, src/_demo.scss */
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    background: lightskyblue; } }
+/* @media screen and (min-width: 1392px) */
+@media screen and (min-width: 87em) {
+  /* line 377, src/_demo.scss */
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+    background: lightskyblue; } }
+/* @media screen and (min-width: 1680px) */
+@media screen and (min-width: 105em) {
+  /* line 393, src/_demo.scss */
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    background: lightskyblue; } }
+/*
+*
+*  Sixteen-column grid active
+*  ----------------------------------------------------------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
+*  5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
+*
+*
+*/
+/* @media screen and (min-width: 1872px) */
+@media screen and (min-width: 117em) {
+  /* line 415, src/_demo.scss */
+  body {
+    background: lightcoral; }
+
+  /* line 14, src/_demo.scss */
+  .col.c1 {
+    width: 6.25%; }
+  /* line 14, src/_demo.scss */
+  .col.c2 {
+    width: 12.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c3 {
+    width: 18.75%; }
+  /* line 14, src/_demo.scss */
+  .col.c4 {
+    width: 25%; }
+  /* line 14, src/_demo.scss */
+  .col.c5 {
+    width: 31.25%; }
+  /* line 14, src/_demo.scss */
+  .col.c6 {
+    width: 37.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c7 {
+    width: 43.75%; }
+  /* line 14, src/_demo.scss */
+  .col.c8 {
+    width: 50%; }
+  /* line 14, src/_demo.scss */
+  .col.c9 {
+    width: 56.25%; }
+  /* line 14, src/_demo.scss */
+  .col.c10 {
+    width: 62.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c11 {
+    width: 68.75%; }
+  /* line 14, src/_demo.scss */
+  .col.c12 {
+    width: 75%; }
+  /* line 14, src/_demo.scss */
+  .col.c13 {
+    width: 81.25%; }
+  /* line 14, src/_demo.scss */
+  .col.c14 {
+    width: 87.5%; }
+  /* line 14, src/_demo.scss */
+  .col.c15 {
+    width: 93.75%; }
+  /* line 14, src/_demo.scss */
+  .col.c16 {
+    width: 100%; } }
+/* @media screen and (min-width: 2080px) */
+@media screen and (min-width: 130em) {
+  /* line 443, src/_demo.scss */
+  body {
+    /* Zoom baseline grid to 18/16 = 1.125 */
+    background: lightcoral; } }

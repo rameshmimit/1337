@@ -8,6 +8,10 @@ from os import path
 # base_path = "www/resources/css"
 ggs_path = "./ggs/css"
 ggs_scss_path = ggs_path + "/src"
+ggs_2_path = "./ggs-2/css"
+ggs_2_scss_path = ggs_2_path + "/src"
+frameless_path = "./frameless/css"
+frameless_scss_path = frameless_path + "/src"
 
 # desktop_scss_path   = base_path + "/src-desktop"
 # desktop_css_path    = base_path + "/desktop"
@@ -44,7 +48,32 @@ def watch():
     local(exec_sass_watch
         .format(
             ggs_scss_path,
-            ggs_path
+            ggs_path,
+        )
+    )
+
+
+@task
+def watch2():
+    """
+    start a scss "watch" process on the css src files
+    """
+    local(exec_sass_watch
+        .format(
+            ggs_2_scss_path,
+            ggs_2_path
+        )
+    )
+
+@task
+def watch_frameless():
+    """
+    start a scss "watch" process on the css src files
+    """
+    local(exec_sass_watch
+        .format(
+            frameless_scss_path,
+            frameless_path
         )
     )
 

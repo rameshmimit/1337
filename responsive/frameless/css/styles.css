@@ -1,0 +1,277 @@
+/*
+    Margin, padding, and border resets
+    except for form elements
+*/
+/* line 10, src/_normalize.scss */
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/*
+    Consistency fixes
+    adopted from http://necolas.github.com/normalize.css/
+*/
+/* line 23, src/_normalize.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section, audio, canvas, video {
+  display: block; }
+
+/* line 27, src/_normalize.scss */
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 33, src/_normalize.scss */
+body {
+  min-height: 100%;
+  font-size: 100%; }
+
+/* line 35, src/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 42, src/_normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* line 43, src/_normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 45, src/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/* line 51, src/_normalize.scss */
+b, strong {
+  font-weight: bold; }
+
+/* line 52, src/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 54, src/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 59, src/_normalize.scss */
+a img, img {
+  -ms-interpolation-mode: bicubic;
+  border: 0; }
+
+/* line 64, src/_normalize.scss */
+input, textarea, button, select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline; }
+
+/* line 74, src/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/* line 80, src/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 88, src/_normalize.scss */
+textarea {
+  overflow: auto; }
+
+/*
+    These are easy to forget
+*/
+/* line 99, src/_normalize.scss */
+::-moz-selection {
+  background: red;
+  color: white; }
+
+/* line 104, src/_normalize.scss */
+img::selection {
+  background: transparent; }
+
+/* line 107, src/_normalize.scss */
+img::-moz-selection {
+  background: transparent; }
+
+/* line 111, src/_normalize.scss */
+body {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62); }
+
+/*
+    Simple Fulid Media
+*/
+/*
+*
+*  Simple fluid media
+*
+*/
+/* line 124, src/_normalize.scss */
+figure {
+  position: relative; }
+
+/* line 127, src/_normalize.scss */
+figure img, figure object, figure embed, figure video {
+  max-width: 100%;
+  display: block; }
+
+/* line 131, src/_normalize.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/*
+    Frameless           <http://framelessgrid.com/>
+    by Joni Korpi       <http://jonikorpi.com/>
+    licensed under CC0  <http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+/* line 6, src/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 50, src/_grid.scss */
+p, h1, h2, h3 {
+  padding: 10px; }
+
+/* line 54, src/_grid.scss */
+.main {
+  padding: 0 10px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  float: left; }
+
+/* line 60, src/_grid.scss */
+.hero {
+  height: 170px;
+  background: url("http://placehold.it/1920x505") no-repeat center 0;
+  background-size: auto 100%; }
+
+/* line 65, src/_grid.scss */
+.header, .hero {
+  width: 100%;
+  float: left; }
+
+/* line 68, src/_grid.scss */
+.article {
+  width: 100%;
+  float: left; }
+
+/* line 71, src/_grid.scss */
+.aside {
+  width: 100%;
+  float: left; }
+
+/*
+    An easy way to zoom your entire layout in or out (as long as it's set in ems).
+    Just change the media queries to activate them.
+    Assuming your base font-size is 16:
+    - the first one zooms out by a factor of (16-2)/16 = 0.875
+    - the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+/*
+    Mobile layout 
+    240–479 px
+    Zoomed out below 320 px
+*/
+/*
+    Wide mobile layout 
+    480-767 px
+    Zoomed in above 480 px
+*/
+@media screen and (min-width: 30em) {
+  /* line 46, src/_media-queries.scss */
+  .main {
+    width: 100%;
+    float: left; }
+
+  /* line 49, src/_media-queries.scss */
+  .hero {
+    height: 280px; }
+
+  /* line 52, src/_media-queries.scss */
+  .header, .hero {
+    width: 100%;
+    float: left; }
+
+  /* line 55, src/_media-queries.scss */
+  .article {
+    width: 60.86957%;
+    float: left; }
+
+  /* line 58, src/_media-queries.scss */
+  .aside {
+    width: 34.78261%;
+    float: left; } }
+/*
+    Tablet layout 
+    600-911 px
+    Zoomed in above 600 px
+*/
+/*
+    Widescreen layout 
+    912-1887 px
+    Zoomed in above 912 px
+*/
+@media screen and (min-width: 57em) {
+  /* line 81, src/_media-queries.scss */
+  body {
+    font-size: 1.25em; }
+
+  /* line 84, src/_media-queries.scss */
+  .hero {
+    height: 400px; }
+
+  /* line 87, src/_media-queries.scss */
+  .main {
+    width: 100%;
+    float: left; }
+
+  /* line 90, src/_media-queries.scss */
+  .header, .hero {
+    width: 100%;
+    float: left; }
+
+  /* line 93, src/_media-queries.scss */
+  .article {
+    width: 61.70213%;
+    float: left; }
+
+  /* line 96, src/_media-queries.scss */
+  .aside {
+    width: 36.17021%;
+    float: left; } }
+/*
+    Huge-screen layout 
+    1888-2520 px
+    Zoomed in above 1920 px
+*/
+@media screen and (min-width: 118em) {
+  /* line 113, src/_media-queries.scss */
+  .hero {
+    height: 505px; } }

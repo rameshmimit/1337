@@ -1,0 +1,71 @@
+/*
+Syntax error: Invalid CSS after "	// height: 40px;": expected expression (e.g. 1px, bold), was "}"
+        on line 14 of ./ggs/css/src/styles.scss
+
+9: 
+10: .row{
+11: 	background: cyan;
+12: 	margin: 0 18/
+13: 	// height: 40px;
+14: }
+15: .col{
+16: 	background: magenta;
+17: 
+18: 	height: 40px;
+19: 	//border: 1px solid cyan;
+
+Backtrace:
+./ggs/css/src/styles.scss:14
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:1136:in `expected'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/lexer.rb:199:in `expected!'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:471:in `assert_expr'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:217:in `times_div_or_mod'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:209:in `plus_or_minus'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:209:in `relational'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:209:in `eq_or_neq'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:209:in `and_expr'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:209:in `or_expr'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:301:in `space'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:284:in `interpolation'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:247:in `expr'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:470:in `send'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:470:in `assert_expr'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/script/parser.rb:49:in `parse'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:1010:in `send'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:1010:in `sass_script'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:870:in `value!'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:847:in `declaration'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:570:in `declaration_or_ruleset'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:1110:in `call'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:1110:in `rethrow'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:580:in `declaration_or_ruleset'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:542:in `block_child'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:534:in `block_contents'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:523:in `block'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:517:in `ruleset'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:541:in `block_child'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:534:in `block_contents'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:70:in `stylesheet'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/scss/parser.rb:27:in `parse'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/engine.rb:342:in `_to_tree'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/engine.rb:315:in `_render'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/engine.rb:262:in `render'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin/compiler.rb:341:in `update_stylesheet'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin/compiler.rb:203:in `update_stylesheets'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin/compiler.rb:201:in `each'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin/compiler.rb:201:in `update_stylesheets'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin/compiler.rb:235:in `watch'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin.rb:107:in `send'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/plugin.rb:107:in `method_missing'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/exec.rb:444:in `watch_or_update'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/exec.rb:307:in `process_result'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/exec.rb:41:in `parse'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/../lib/sass/../sass/exec.rb:21:in `parse!'
+/var/lib/gems/1.8/gems/sass-3.2.5/bin/sass:8
+/usr/local/bin/sass:19:in `load'
+/usr/local/bin/sass:19
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"	// height: 40px;\": expected expression (e.g. 1px, bold), was \"}\"\A         on line 14 of ./ggs/css/src/styles.scss\A \A 9: \A 10: .row{\A 11: 	background: cyan;\A 12: 	margin: 0 18/\A 13: 	// height: 40px;\A 14: }\A 15: .col{\A 16: 	background: magenta;\A 17: \A 18: 	height: 40px;\A 19: 	//border: 1px solid cyan;"; }

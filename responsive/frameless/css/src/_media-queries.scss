@@ -1,0 +1,116 @@
+/*
+    An easy way to zoom your entire layout in or out (as long as it's set in ems).
+    Just change the media queries to activate them.
+    Assuming your base font-size is 16:
+    - the first one zooms out by a factor of (16-2)/16 = 0.875
+    - the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+
+@mixin zoom-baseline($factor){
+    $font-size: 16;
+    // 16-2/16 = .875
+    // font-size: ($font-size - 2) / $em;
+
+    font-size: ($font-size * $factor) / $font-size + 0em;
+}
+
+// @media screen and (max-width: 1px) {
+//     body {
+//         font-size: ($font-size - 2) / $em;
+//     }
+// }
+
+// @media screen and (max-width: 1px) {
+//     body {
+//         font-size: ($font-size + 2) / $em;
+//     }
+// }
+
+/*
+    Mobile layout 
+    240–479 px
+    Zoomed out below 320 px
+*/
+
+@media screen and (min-width: 15em) {
+}
+
+
+/*
+    Wide mobile layout 
+    480-767 px
+    Zoomed in above 480 px
+*/
+
+@media screen and (min-width: 30em) {
+    .main{
+        @include width(8, 8);
+    }
+    .hero{
+        height: 280px;
+    }
+    .header, .hero{
+        @include width(8, 8);
+    }
+    .article{
+        @include width(8, 5);
+    }
+    .aside{
+        @include width(8, 3);
+    }
+}
+
+
+/*
+    Tablet layout 
+    600-911 px
+    Zoomed in above 600 px
+*/
+
+@media screen and (min-width: 37.5em) {
+}
+
+
+/*
+    Widescreen layout 
+    912-1887 px
+    Zoomed in above 912 px
+*/
+
+@media screen and (min-width: 57em) {
+    body {
+        @include zoom-baseline(1.25);
+    }
+    .hero{
+        height: 400px;
+    }
+    .main{
+        @include width(16, 16);
+    }
+    .header, .hero{
+        @include width(16, 16);
+    }
+    .article{
+        @include width(16, 10);
+    }
+    .aside{
+        @include width(16, 6);
+    }
+}
+
+@media screen and (min-width: 57em) and (max-width: 117.9375em) {
+
+}
+
+
+/*
+    Huge-screen layout 
+    1888-2520 px
+    Zoomed in above 1920 px
+*/
+
+@media screen and (min-width: 118em) {
+    .hero{
+        height: 505px;
+    }
+}
