@@ -1,17 +1,59 @@
 /*
-    An easy way to zoom your entire layout in or out (as long as it's set in ems).
-    Just change the media queries to activate them.
-    Assuming your base font-size is 16:
-    - the first one zooms out by a factor of (16-2)/16 = 0.875
-    - the second one zooms in by a factor of (16+2)/16 = 1.125  
+    Mobile layout 
+    240–479 px
+    Zoomed out below 320 px
 */
+// default layout
+.main, .hero, .header, .section{
+    @include row();
+}
+.main{
+    position: relative;
+}
+.hero{
+    height: 200px;
+    background: url('http://placehold.it/1920x505') no-repeat center 0;
+    background-size: auto 100%;
 
-@mixin zoom-baseline($factor){
-    $font-size: 16;
-    // 16-2/16 = .875
-    // font-size: ($font-size - 2) / $em;
+    margin-bottom: 25px;
+}
+.header{
+    margin-bottom: 30px;
+    .text{
+        @include width(4, 4);
+    }
+}
+.section{
 
-    font-size: ($font-size * $factor) / $font-size + 0em;
+}
+.article{
+    @include width(4, 4);
+    margin-bottom: 10px;
+    h2{
+        margin-bottom: 10px;
+    }
+}
+.aside{
+    @include width(4, 4);
+    margin-bottom: 10px;
+    h3{
+        margin-bottom: 10px;
+    }
+}
+
+.promos{
+    @include row();
+    margin-bottom: 30px;
+
+    .promo{
+        @include width(4, 4);
+        height: 50px;
+        background: lightgray;
+        margin-bottom: 10px;
+
+        background: url('http://placehold.it/940x200') no-repeat center 0;
+        background-size: 100% auto;
+    }
 }
 
 // @media screen and (max-width: 1px) {
@@ -33,6 +75,9 @@
 */
 
 @media screen and (min-width: 15em) {
+    .hero{
+        height: 170px;
+    }
 }
 
 
@@ -43,20 +88,30 @@
 */
 
 @media screen and (min-width: 30em) {
-    .main{
-        @include width(8, 8);
+    $max_col: 8;
+    .body{
+        @include zoom-baseline(1.05);
     }
     .hero{
         height: 280px;
     }
-    .header, .hero{
-        @include width(8, 8);
+    .promos{
+        .promo{
+            @include width($max_col, 4);
+            height: 80px;
+        }
+    }
+    .header{
+        .text{
+            @include width($max_col, $max_col);
+        }
     }
     .article{
-        @include width(8, 5);
+        @include width($max_col, 4);
+
     }
     .aside{
-        @include width(8, 3);
+        @include width($max_col, 4);
     }
 }
 
@@ -78,23 +133,29 @@
 */
 
 @media screen and (min-width: 57em) {
+    $max_col: 16;
     body {
-        @include zoom-baseline(1.25);
+        @include zoom-baseline(1.13);
     }
     .hero{
         height: 400px;
     }
-    .main{
-        @include width(16, 16);
+    .promos{
+        .promo{
+            @include width($max_col, 8);
+            height: 125px;
+        }
     }
-    .header, .hero{
-        @include width(16, 16);
+    .header{
+        .text{
+            @include width($max_col, $max_col);
+        }
     }
     .article{
-        @include width(16, 10);
+        @include width($max_col, 10);
     }
     .aside{
-        @include width(16, 6);
+        @include width($max_col, 6);
     }
 }
 
@@ -112,5 +173,10 @@
 @media screen and (min-width: 118em) {
     .hero{
         height: 505px;
+    }
+    .promos{
+        .promos{
+            height: 200px;
+        }
     }
 }

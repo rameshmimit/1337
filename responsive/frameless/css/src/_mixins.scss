@@ -1,0 +1,40 @@
+@mixin row(){
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    // padding: 0 10px;
+}
+
+// you can calculate percentage with - target / context = p
+@mixin width ($max_col, $num_col) {
+    // total size of container
+    $context: ($max_col * ($column + $gutter));// - $gutter);
+    
+    // target sizes
+    // | margin |    column width    | margin |
+    // 1. calculate width of column (which includes gutters)
+    // 2. remove outer gutter widths from calculation
+    // | x |  col_target  | x |
+    $col_target: ($num_col * ($column + $gutter) - $gutter);
+    $mar_target: $gutter/2;
+
+    width: $col_target / $context * 100%;
+    margin: 0 ($mar_target/$context * 100%);
+    float: left;
+}
+
+/*
+    An easy way to zoom your entire layout in or out (as long as it's set in ems).
+    Just change the media queries to activate them.
+    Assuming your base font-size is 16:
+    - the first one zooms out by a factor of (16-2)/16 = 0.875
+    - the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+@mixin zoom-baseline($factor){
+    $font-size: 16;
+    // 16-2/16 = .875
+    // font-size: ($font-size - 2) / $em;
+
+    font-size: ($font-size * $factor) / $font-size + 0em;
+}

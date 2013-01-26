@@ -1,4 +1,11 @@
 /*
+    An easy way to zoom your entire layout in or out (as long as it's set in ems).
+    Just change the media queries to activate them.
+    Assuming your base font-size is 16:
+    - the first one zooms out by a factor of (16-2)/16 = 0.875
+    - the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+/*
     Margin, padding, and border resets
     except for form elements
 */
@@ -154,79 +161,122 @@ img {
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 50, src/_grid.scss */
-p, h1, h2, h3 {
-  padding: 10px; }
-
-/* line 54, src/_grid.scss */
-.main {
-  padding: 0 10px;
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  float: left; }
-
-/* line 60, src/_grid.scss */
-.hero {
-  height: 170px;
-  background: url("http://placehold.it/1920x505") no-repeat center 0;
-  background-size: auto 100%; }
-
-/* line 65, src/_grid.scss */
-.header, .hero {
-  width: 100%;
-  float: left; }
-
-/* line 68, src/_grid.scss */
-.article {
-  width: 100%;
-  float: left; }
-
-/* line 71, src/_grid.scss */
-.aside {
-  width: 100%;
-  float: left; }
-
-/*
-    An easy way to zoom your entire layout in or out (as long as it's set in ems).
-    Just change the media queries to activate them.
-    Assuming your base font-size is 16:
-    - the first one zooms out by a factor of (16-2)/16 = 0.875
-    - the second one zooms in by a factor of (16+2)/16 = 1.125  
-*/
 /*
     Mobile layout 
     240–479 px
     Zoomed out below 320 px
 */
+/* line 7, src/_media-queries.scss */
+.main, .hero, .header, .section {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+/* line 10, src/_media-queries.scss */
+.main {
+  position: relative; }
+
+/* line 13, src/_media-queries.scss */
+.hero {
+  height: 200px;
+  background: url("http://placehold.it/1920x505") no-repeat center 0;
+  background-size: auto 100%;
+  margin-bottom: 25px; }
+
+/* line 20, src/_media-queries.scss */
+.header {
+  margin-bottom: 30px; }
+  /* line 22, src/_media-queries.scss */
+  .header .text {
+    width: 91.66667%;
+    margin: 0 4.16667%;
+    float: left; }
+
+/* line 29, src/_media-queries.scss */
+.article {
+  width: 91.66667%;
+  margin: 0 4.16667%;
+  float: left;
+  margin-bottom: 10px; }
+  /* line 32, src/_media-queries.scss */
+  .article h2 {
+    margin-bottom: 10px; }
+
+/* line 36, src/_media-queries.scss */
+.aside {
+  width: 91.66667%;
+  margin: 0 4.16667%;
+  float: left;
+  margin-bottom: 10px; }
+  /* line 39, src/_media-queries.scss */
+  .aside h3 {
+    margin-bottom: 10px; }
+
+/* line 44, src/_media-queries.scss */
+.promos {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px; }
+  /* line 48, src/_media-queries.scss */
+  .promos .promo {
+    width: 91.66667%;
+    margin: 0 4.16667%;
+    float: left;
+    height: 50px;
+    background: lightgray;
+    margin-bottom: 10px;
+    background: url("http://placehold.it/940x200") no-repeat center 0;
+    background-size: 100% auto; }
+
+/*
+    Mobile layout 
+    240–479 px
+    Zoomed out below 320 px
+*/
+@media screen and (min-width: 15em) {
+  /* line 78, src/_media-queries.scss */
+  .hero {
+    height: 170px; } }
 /*
     Wide mobile layout 
     480-767 px
     Zoomed in above 480 px
 */
 @media screen and (min-width: 30em) {
-  /* line 46, src/_media-queries.scss */
-  .main {
-    width: 100%;
-    float: left; }
+  /* line 92, src/_media-queries.scss */
+  .body {
+    font-size: 1.05em; }
 
-  /* line 49, src/_media-queries.scss */
+  /* line 95, src/_media-queries.scss */
   .hero {
     height: 280px; }
 
-  /* line 52, src/_media-queries.scss */
-  .header, .hero {
-    width: 100%;
+  /* line 99, src/_media-queries.scss */
+  .promos .promo {
+    width: 45.83333%;
+    margin: 0 2.08333%;
+    float: left;
+    height: 80px; }
+
+  /* line 105, src/_media-queries.scss */
+  .header .text {
+    width: 95.83333%;
+    margin: 0 2.08333%;
     float: left; }
 
-  /* line 55, src/_media-queries.scss */
+  /* line 109, src/_media-queries.scss */
   .article {
-    width: 60.86957%;
+    width: 45.83333%;
+    margin: 0 2.08333%;
     float: left; }
 
-  /* line 58, src/_media-queries.scss */
+  /* line 113, src/_media-queries.scss */
   .aside {
-    width: 34.78261%;
+    width: 45.83333%;
+    margin: 0 2.08333%;
     float: left; } }
 /*
     Tablet layout 
@@ -239,32 +289,37 @@ p, h1, h2, h3 {
     Zoomed in above 912 px
 */
 @media screen and (min-width: 57em) {
-  /* line 81, src/_media-queries.scss */
+  /* line 137, src/_media-queries.scss */
   body {
-    font-size: 1.25em; }
+    font-size: 1.13em; }
 
-  /* line 84, src/_media-queries.scss */
+  /* line 140, src/_media-queries.scss */
   .hero {
     height: 400px; }
 
-  /* line 87, src/_media-queries.scss */
-  .main {
-    width: 100%;
+  /* line 144, src/_media-queries.scss */
+  .promos .promo {
+    width: 47.91667%;
+    margin: 0 1.04167%;
+    float: left;
+    height: 125px; }
+
+  /* line 150, src/_media-queries.scss */
+  .header .text {
+    width: 97.91667%;
+    margin: 0 1.04167%;
     float: left; }
 
-  /* line 90, src/_media-queries.scss */
-  .header, .hero {
-    width: 100%;
-    float: left; }
-
-  /* line 93, src/_media-queries.scss */
+  /* line 154, src/_media-queries.scss */
   .article {
-    width: 61.70213%;
+    width: 60.41667%;
+    margin: 0 1.04167%;
     float: left; }
 
-  /* line 96, src/_media-queries.scss */
+  /* line 157, src/_media-queries.scss */
   .aside {
-    width: 36.17021%;
+    width: 35.41667%;
+    margin: 0 1.04167%;
     float: left; } }
 /*
     Huge-screen layout 
@@ -272,6 +327,10 @@ p, h1, h2, h3 {
     Zoomed in above 1920 px
 */
 @media screen and (min-width: 118em) {
-  /* line 113, src/_media-queries.scss */
+  /* line 174, src/_media-queries.scss */
   .hero {
-    height: 505px; } }
+    height: 505px; }
+
+  /* line 178, src/_media-queries.scss */
+  .promos .promos {
+    height: 200px; } }
