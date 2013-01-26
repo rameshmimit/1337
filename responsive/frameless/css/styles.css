@@ -171,7 +171,8 @@ img {
   width: 100%;
   overflow: hidden;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  padding: 0 0.625em; }
 
 /* line 10, src/_media-queries.scss */
 .main {
@@ -219,6 +220,7 @@ img {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  padding: 0 0.625em;
   margin-bottom: 30px; }
   /* line 48, src/_media-queries.scss */
   .promos .promo {
@@ -246,10 +248,6 @@ img {
     Zoomed in above 480 px
 */
 @media screen and (min-width: 30em) {
-  /* line 92, src/_media-queries.scss */
-  .body {
-    font-size: 1.05em; }
-
   /* line 95, src/_media-queries.scss */
   .hero {
     height: 280px; }
@@ -289,10 +287,6 @@ img {
     Zoomed in above 912 px
 */
 @media screen and (min-width: 57em) {
-  /* line 137, src/_media-queries.scss */
-  body {
-    font-size: 1.13em; }
-
   /* line 140, src/_media-queries.scss */
   .hero {
     height: 400px; }

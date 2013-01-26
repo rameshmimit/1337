@@ -90,7 +90,7 @@
 @media screen and (min-width: 30em) {
     $max_col: 8;
     .body{
-        @include zoom-baseline(1.05);
+        // @include zoom-baseline(1.05);
     }
     .hero{
         height: 280px;
@@ -135,7 +135,7 @@
 @media screen and (min-width: 57em) {
     $max_col: 16;
     body {
-        @include zoom-baseline(1.13);
+        // @include zoom-baseline(1.13);
     }
     .hero{
         height: 400px;
