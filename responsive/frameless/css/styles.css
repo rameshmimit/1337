@@ -248,30 +248,41 @@ img {
     Zoomed in above 480 px
 */
 @media screen and (min-width: 30em) {
-  /* line 95, src/_media-queries.scss */
+  /* line 97, src/_media-queries.scss */
   .hero {
     height: 280px; }
 
-  /* line 99, src/_media-queries.scss */
+  /* line 101, src/_media-queries.scss */
   .promos .promo {
     width: 45.83333%;
     margin: 0 2.08333%;
     float: left;
     height: 80px; }
 
-  /* line 105, src/_media-queries.scss */
+  /* line 107, src/_media-queries.scss */
   .header .text {
     width: 95.83333%;
     margin: 0 2.08333%;
     float: left; }
 
-  /* line 109, src/_media-queries.scss */
+  /* line 111, src/_media-queries.scss */
   .article {
     width: 45.83333%;
     margin: 0 2.08333%;
     float: left; }
+    /* line 114, src/_media-queries.scss */
+    .article p {
+      -moz-column-count: 2;
+      -moz-column-gap: 40px;
+      -moz-column-rule: 1px solid #dddddd;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 40px;
+      -webkit-column-rule: 1px solid #dddddd;
+      column-count: 2;
+      column-gap: 40px;
+      column-rule: 1px solid #dddddd; }
 
-  /* line 113, src/_media-queries.scss */
+  /* line 127, src/_media-queries.scss */
   .aside {
     width: 45.83333%;
     margin: 0 2.08333%;
@@ -287,30 +298,41 @@ img {
     Zoomed in above 912 px
 */
 @media screen and (min-width: 57em) {
-  /* line 140, src/_media-queries.scss */
+  /* line 154, src/_media-queries.scss */
   .hero {
     height: 400px; }
 
-  /* line 144, src/_media-queries.scss */
+  /* line 158, src/_media-queries.scss */
   .promos .promo {
     width: 47.91667%;
     margin: 0 1.04167%;
     float: left;
     height: 125px; }
 
-  /* line 150, src/_media-queries.scss */
+  /* line 164, src/_media-queries.scss */
   .header .text {
     width: 97.91667%;
     margin: 0 1.04167%;
     float: left; }
 
-  /* line 154, src/_media-queries.scss */
+  /* line 168, src/_media-queries.scss */
   .article {
     width: 60.41667%;
     margin: 0 1.04167%;
     float: left; }
+    /* line 171, src/_media-queries.scss */
+    .article p {
+      -moz-column-count: 2;
+      -moz-column-gap: 40px;
+      -moz-column-rule: 1px solid #dddddd;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 40px;
+      -webkit-column-rule: 1px solid #dddddd;
+      column-count: 2;
+      column-gap: 40px;
+      column-rule: 1px solid #dddddd; }
 
-  /* line 157, src/_media-queries.scss */
+  /* line 183, src/_media-queries.scss */
   .aside {
     width: 35.41667%;
     margin: 0 1.04167%;
@@ -321,10 +343,10 @@ img {
     Zoomed in above 1920 px
 */
 @media screen and (min-width: 118em) {
-  /* line 174, src/_media-queries.scss */
+  /* line 200, src/_media-queries.scss */
   .hero {
     height: 505px; }
 
-  /* line 178, src/_media-queries.scss */
+  /* line 204, src/_media-queries.scss */
   .promos .promos {
     height: 200px; } }
