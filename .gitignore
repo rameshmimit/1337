@@ -6,3 +6,5 @@
 r-modules/r-only-test/resources/js/*
 r-modules/www/resources/js/*
 rifle/node_modules
+id_rsa
+id_rsa.pub
